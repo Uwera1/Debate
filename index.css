@@ -39,16 +39,16 @@ nav h1 {
 
 nav ul {
     list-style: none;
-    display: flex; /* Aligns the list items horizontally */
-    justify-content: center; /* Center the <li> items */
-    gap: 30px; /* Space between links */
+    display: flex; 
+    justify-content: center; 
+    gap: 30px;
     margin: 0;
     padding: 0;
-    width: 100%; /* Takes the full width of the header */
+    width: 100%; 
 }
 
 nav ul li {
-    display: inline-block; /* Keep items inline */
+    display: inline-block; 
 }
 
 nav ul li a {
@@ -60,7 +60,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #f1c40f; /* Add a hover effect */
+    color: #f1c40f;
 }
 
 main {
@@ -69,26 +69,26 @@ main {
 .class {
     display: grid;
     justify-items: center;
-    margin-bottom: 20px; /* Adjust the space below the top image */
+    margin-bottom: 20px;
 }
 
-/* Style for the main grid containing the two bottom images */
+
 .main {
     display: grid;
     grid-template-areas: 
         "left right"
         ". center";
-    grid-template-columns: 1fr 1fr; /* Creates two columns */
-    gap: 20px; /* Adds space between the two bottom images */
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px; 
     position: relative;
 }
 
-/* Style for the bottom images */
+
 .main div {
     position: relative;
 }
 
-/* Adjust the vertical positioning of the second bottom image */
+
 #ak {
     margin-top: 39%;
     margin-left: -40rem;
