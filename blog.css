@@ -1,0 +1,213 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: rgb(245, 245, 235);
+    font-family: 'Poppins', sans-serif;
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the entire nav content */
+    width: 100%; /* Ensures full width */
+}
+
+nav h1 {
+    font-size: 2rem;
+    color: white;
+    margin-left: 3%;
+    font-family: 'Times New Roman', Times, serif;
+    position: absolute;
+    left: 20px; /* Keeps the title to the left */
+}
+
+nav ul {
+    list-style: none;
+    display: flex; /* Aligns the list items horizontally */
+    justify-content: center; /* Center the <li> items */
+    gap: 30px; /* Space between links */
+    margin: 0;
+    padding: 0;
+    width: 100%; /* Takes the full width of the header */
+}
+
+nav ul li {
+    display: inline-block; /* Keep items inline */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    font-family: 'Times New Roman', Times, serif;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #f1c40f; /* Add a hover effect */
+}
+main {
+    padding-top: 100px;
+}
+li a {
+    text-decoration: none;
+    color: white;
+}
+#p{
+    margin-left: 45%;
+    color: black;
+    font-size: 1.3rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: lighter;
+}
+.follow{
+    display: flex;
+    margin-left: 30%;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+#im{
+    width: 3rem;
+    height: 3rem;
+}
+.full{
+    width: 60%;
+    padding: 20px;
+    display: flex;
+    align-items: stretch;
+}
+.photo {
+    flex: 1; 
+    display: flex;
+    justify-content: center; 
+}
+.photo img {
+    display: block; 
+}   
+.side{
+    display: flex;
+    flex-direction: column;
+}
+
+#title {
+    font-size: 2rem;
+    color: #333;
+    text-align: left;
+    font-family: 'Times New Roman', Times, serif;
+    width: 30rem;
+    margin-left: 3%;
+}
+
+#detail {
+    font-size: 1.2rem;
+    color: #666;
+    margin-top: 5%;
+    margin-left: 3%;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    height: 194px;
+}
+.um {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-left: 70%;
+}
+#site {
+    width: 2rem;
+    height: 2rem;
+}
+#as {
+    font-size: 1rem;
+    color: white;
+    margin-top: 10px;
+    margin-left: 70%;
+}
+
+#a{
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: -14.5%;
+    margin-left: 70%;
+}
+#blog {
+    font-size: 1.4rem;
+    margin-left: -80%;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.subscription-container {
+    /* background: #333; */
+    height: 10rem;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    text-align: center;
+    
+    max-width: 100%;
+    margin-top: 30px;
+}
+
+.subscription-container form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.subscription-container input[type="email"] {
+    width: 25%;
+    padding: 10px;
+    margin-left: 3%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.subscription-container input[type="name"] {
+    width: 25%;
+    padding: 10px;
+    margin-left: 3%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.subscription-container button {
+    padding: 10px 20px;
+    background-color: gray;
+    color: white;
+    border: none;
+    margin-top: 2%;
+    width: 10%;
+    border-radius: 2rem;
+    margin-left: 10%;
+    cursor: pointer;
+}
+
+.subscription-container button:hover {
+    background-color: #555;
+}
+
+.success-message {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: green;
+    display: none;
+}
+

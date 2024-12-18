@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(245, 245, 235);
+    font-family: "Tajawal", sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    z-index: 1000;
+}
+nav{
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style-type:none ;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin-left: 25rem;
+}
+nav li{
+    color:var(--text-color);
+    font-size: 2rem;
+    font-weight: lighter;
+    
+
+}
+header h1{
+    text-align: center;
+    margin-top: 20px;
+    color: var(--text-color);
+}
+h1{
+  
+    font-size: 2rem;
+    font-weight: lighter;
+    margin:1rem;
+}
+#im{
+    border-radius: 20px;
+}
+#al{
+    margin-left: 25%;
+  
+}
+#am{
+    margin-left: 45%;
+  margin-top: 1%;
+}
+#ak{
+   
+  margin-top: 1%;
+}
+.main{
+    display: flex;
+    flex-direction: row;
+    gap: 70%;
+}
+#em{
+    font-size: 5rem;
+    color: #333;
+}
+#um{
+    margin-left: 25rem;
+    font-weight: lighter;
+    color: var(--text-color);
+}
+.after{
+    display: flex;
+    flex-direction: row;
+    gap: 70%;
+}
+#then{
+    margin-top: 2%;
+    margin-left: 50%;
+}
+#su{
+  
+    margin-left: 15%;
+}
+#se{
+
+    margin-left: 75%;
+}
+
+.event{
+    width: 80%;
+    height:100%;
+    border: 3px solid black;
+   padding: 30px;
+   margin-left: 10%;
+   margin-bottom: 5%;
+   margin-top: 3%;
+}
+.foot{
+    background-color:rgb(234, 233, 230);
+   
+    height: 65rem;
+}
+#le{
+    margin-left: 5%;
+    margin-top: 10%;
+    font-size: 4rem;
+}
+#ir{
+    margin-top:5%;
+    margin-left: 10%;
+    margin-bottom: 10%;
+    margin-right: 10%;
+
+}
+#mi{
+    width: 100%;
+    height: auto;
+}
+.follow{
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+}
+.full{
+    display: inline;
+   
+}
+#title{
+    margin-left: 5%;
+    margin-top: 1%;
+    font-weight: lighter;
+    font-size:2rem;
+    color: var(--text-color);
+}
+#detail{
+    font-size: 1.2rem;
+    color: #666;
+}
+#line{
+    margin-left: 5%;
+    margin-right: 15%;
+}
+.footer{
+    background-color: #333;
+    color: white;
+    padding: 40px 20px;
+    
+}
+.um {
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: lighter;
+    margin-top: 20px;
+}
+#site{
+    width:2rem;
+    height: 2rem;
+  
+}
+#as {
+    font-size: 1rem;
+    color: white;
+    margin-top: 10px;
+}
+footer {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+#blog {
+    font-size: 1.4rem;
+    color: #333;
+}
+.subscription-container {
+    background: #ffffff;
+    height: 10rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 100%;
+    margin-top: 30px;
+}
+
+.subscription-container form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.subscription-container input[type="email"] {
+    width: 30%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.subscription-container button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.subscription-container button:hover {
+    background-color: #555;
+}
+
+.success-message {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: green;
+    display: none;
+}
