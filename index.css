@@ -150,23 +150,7 @@ width: 50%;
     width: 3rem;
     height: 3rem;
 }
-#em {
-    margin-top: 5%;
-    text-align: center;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 5rem;
-    color: #333;
-}
-#um {
-    font-size: 1.3rem;
-    margin-left: 26%;
-    width: 50%;
-    font-family: 'Times New Roman', Times, serif;
-    text-align: center;
-    font-weight: lighter;
-    color: #333;
-    margin-top: 20px;
-}
+
 
 .after{
     display: flex;
@@ -447,6 +431,146 @@ img {
     margin-left: -70%;
     margin-top:-7%;
 }
+
+@media (max-width: 600px) {
+    nav ul {
+        gap: 20px;
+    }
+
+    header {
+        padding: 15px;
+    }
+
+    nav h1 {
+        font-size: 1.5rem;
+        position: relative;
+        margin-left: 0;
+    }
+
+    .main {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+
+    .event-item {
+        width: 100%;
+    }
+
+    #title {
+        font-size: 1.5rem;
+    }
+
+    .footer {
+        padding: 20px;
+    }
+}
+.general {
+    background-image: url('/Pictures/king.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 600px; /* Increase height for better clarity */
+    width: 100%;
+    margin-top: -7.2%;
+}
+/* For background image cycling */
+.general {
+    background-image: url('/Pictures/king1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 600px;
+    width: 100%;
+    margin-top: -7.2%;
+    animation: backgroundChange 15s infinite; /* 15s for one cycle */
+}
+
+/* Keyframes to change the background images */
+@keyframes backgroundChange {
+    0% {
+        background-image: url('/Pictures/king.png');
+    }
+    33% {
+        background-image: url('/Pictures/good.PNG');
+    }
+    66% {
+        background-image: url('/Pictures/power.PNG');
+    }
+    100% {
+        background-image: url('/Pictures/power2.PNG');
+    }
+}
+
+/* Word Container (To contain individual letters) */
+.word {
+    position: relative;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 5rem;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    animation: fadeInAndMove 15s infinite;
+}
+
+/* Keyframes for animating letters one by one */
+@keyframes fadeInAndMove {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    25% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+}
+
+/* Individual letter styles */
+.word span {
+    display: inline-block;
+    opacity: 0;
+    animation: letterAnimation 15s infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes letterAnimation {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    20% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    80% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+}
+
+#um {
+    font-size: 1.3rem;
+    margin-left: 26%;
+    width: 50%;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    font-weight: lighter;
+    color: white;
+    margin-top: 20px;
+}
+
+
 
 
 
