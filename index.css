@@ -24,8 +24,8 @@ header {
 nav {
     display: flex;
     align-items: center;
-    justify-content: center; /* Center the entire nav content */
-    width: 100%; /* Ensures full width */
+    justify-content: center; 
+    width: 100%; 
 }
 
 nav h1 {
@@ -34,7 +34,7 @@ nav h1 {
     margin-left: 3%;
     font-family: 'Times New Roman', Times, serif;
     position: absolute;
-    left: 20px; /* Keeps the title to the left */
+    left: 20px;
 }
 
 nav ul {
