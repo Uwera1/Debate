@@ -285,30 +285,6 @@ span:hover {
     width: 100%;
     height: auto;
 }
-
-
-/*
-#su{
-    width: 20%;
-    height: 20%;
-    margin-left: 75%;
-}
-#al{
-    margin-left: 25%;
-  width: 20%;
-  height: 20%;
-}
-#am{
-    margin-left: 5%;
-  margin-top: 1%;
-  width: 20%;
-  height: 20%;
-}
-#ak{
-    width: 20%;
- 
-  margin-left: 77%;
-}*/
 #ir{
     margin-top:5%;
     margin-left: 10%;
@@ -322,11 +298,6 @@ span:hover {
     font-size: 2rem;
     color: #333;
 }
-/*.footer {
-    background-color: #333;
-    color: white;
-    padding: 40px 20px;
-}*/
 .footer {
     background-color: #333;
     color: white;
