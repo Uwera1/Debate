@@ -97,6 +97,7 @@ main {
 }
 #am{
     grid-area: left;
+    margin-top: 3rem;
     margin-left: 45rem;
     font-size: 2rem;
     font-family: 'Times New Roman', Times, serif;
@@ -107,7 +108,7 @@ main {
    
     font-size: 1.6rem;
     font-family: 'Times New Roman', Times, serif;
-    margin-top: -15%;
+    margin-top: -20%;
 }
 #ua{
     margin-left: 10%;
@@ -128,6 +129,7 @@ font-size: 1.3rem;
 #sion{
     font-weight: bold;
     font-size: 1.6rem;
+    margin-top: 5%;
     color: black;
    font-family: 'Times New Roman', Times, serif;
 width: 50%;
@@ -376,7 +378,7 @@ span:hover {
 }
 
 #yva{
-    margin-top: 5%;
+    margin-top: 9%;
     margin-left: -30%;
     font-size: 1.3rem;
     text-align: center;
@@ -464,15 +466,15 @@ img {
         padding: 20px;
     }
 }
-.general {
+/*.general {
     background-image: url('/Pictures/king.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 600px; /* Increase height for better clarity */
+    height: 600px;
     width: 100%;
     margin-top: -7.2%;
-}
+}*/
 /* For background image cycling */
 .general {
     background-image: url('/Pictures/king1.png');
@@ -485,7 +487,6 @@ img {
     animation: backgroundChange 15s infinite; /* 15s for one cycle */
 }
 
-/* Keyframes to change the background images */
 @keyframes backgroundChange {
     0% {
         background-image: url('/Pictures/king.png');
@@ -509,10 +510,23 @@ img {
     color: white;
     text-align: center;
     display: inline-block;
-    animation: fadeInAndMove 15s infinite;
 }
 
-/* Keyframes for animating letters one by one */
+/* Animate the text in #em only */
+#em {
+    font-size: 5rem; /* Increase font size */
+    word-spacing: 3rem; /* Add more space between words */
+    margin-top: 5rem;
+    color: white;
+    margin-left: 26%;
+    width: 50%;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    font-weight: bold;
+    animation: fadeInAndMove 15s infinite; /* Animate #em */
+}
+
+/* Keyframes for animating the #em text letter by letter */
 @keyframes fadeInAndMove {
     0% {
         opacity: 0;
@@ -532,10 +546,11 @@ img {
     }
 }
 
-/* Individual letter styles */
-.word span {
+/* Individual letter styles for #em */
+#em span {
     display: inline-block;
     opacity: 0;
+    word-spacing: 3rem; /* Ensure consistent word spacing */
     animation: letterAnimation 15s infinite;
     animation-timing-function: ease-in-out;
 }
@@ -559,19 +574,15 @@ img {
     }
 }
 
+/* Keep #um constant */
 #um {
-    font-size: 1.3rem;
-    margin-left: 26%;
-    width: 50%;
+    font-size: 1.8rem;
+    margin-left: 20%;
+    width: 100%;
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
     font-weight: lighter;
     color: white;
-    margin-top: 20px;
+    margin-top: 8rem;
+    animation: none; /* Ensures no animation on #um */
 }
-
-
-
-
-
-

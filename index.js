@@ -1,20 +1,40 @@
 window.onload = function () {
-    // Function to wrap each letter of the text inside a span tag
-    function wrapLetters() {
-        const textElement = document.getElementById('em');
-        const text = textElement.innerHTML;
-        textElement.innerHTML = ''; // Clear the existing text
+    const textElement = document.getElementById('em');
+    const text = textElement.textContent.trim(); // Get the text content of #em
+    textElement.innerHTML = ''; // Clear the element content
 
-        // Wrap each letter in a span and append to the element
-        for (let i = 0; i < text.length; i++) {
+    let index = 0; // Index to track the current letter
+    const delay = 200; // Speed of animation per letter (200ms)
+    
+    function animateLetters() {
+        if (index < text.length) {
             const letter = document.createElement('span');
-            letter.innerHTML = text[i];
+            letter.textContent = text[index];
+            letter.style.display = 'inline-block';
+            letter.style.opacity = '0';
+            letter.style.animation = `fadeInLetter 0.5s ease forwards`;
             textElement.appendChild(letter);
-            // Add a delay to the animation for each letter
-            letter.style.animationDelay = `${i * 0.1}s`;
+            index++;
+        } else {
+            // Reset animation after the entire word is displayed
+            setTimeout(() => {
+                index = 0;
+                textElement.innerHTML = '';
+                animateLetters(); // Start the animation again
+            }, 1000); // Delay before restarting
         }
     }
 
-    // Call the function to wrap letters when page loads
-    wrapLetters();
+    // Start animating letters
+    setInterval(animateLetters, delay);
 };
+
+// CSS animation for each letter
+const style = document.createElement('style');
+style.innerHTML = `
+    @keyframes fadeInLetter {
+        0% { opacity: 0; transform: translateY(-10px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+`;
+document.head.appendChild(style);
