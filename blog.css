@@ -29,20 +29,21 @@ nav {
 nav h1 {
     font-size: 2rem;
     color: white;
-    margin-left: 3%;
-
+    margin-left: 8%;
+  /*  font-family: 'Times New Roman', Times, serif;*/
     position: absolute;
-    left: 20px; /* Keeps the title to the left */
+    left: 20px;
 }
+
 
 nav ul {
     list-style: none;
-    display: flex; /* Aligns the list items horizontally */
-    justify-content: center; /* Center the <li> items */
-    gap: 30px; /* Space between links */
-    margin: 0;
+    display: flex; 
+    justify-content: center; 
+    gap: 30px;
+  margin-left: 30%;
     padding: 0;
-    width: 100%; /* Takes the full width of the header */
+    width: 100%; 
 }
 
 nav ul li {
@@ -62,6 +63,7 @@ nav ul li a:hover {
 }
 main {
     padding-top: 100px;
+    margin-top: 4%;
 }
 li a {
     text-decoration: none;
@@ -82,8 +84,8 @@ li a {
     flex-wrap: wrap;
 }
 #im{
-    width: 3rem;
-    height: 3rem;
+    width: 8rem;
+    height: 8rem;
 }
 .full{
     width: 60%;
@@ -198,6 +200,7 @@ li a {
     border-radius: 2rem;
     margin-left: 10%;
     cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .subscription-container button:hover {

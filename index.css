@@ -31,7 +31,7 @@ nav {
 nav h1 {
     font-size: 2rem;
     color: white;
-    margin-left: 3%;
+    margin-left: 8%;
   /*  font-family: 'Times New Roman', Times, serif;*/
     position: absolute;
     left: 20px;
@@ -42,7 +42,7 @@ nav ul {
     display: flex; 
     justify-content: center; 
     gap: 30px;
-    margin: 0;
+  margin-left: 30%;
     padding: 0;
     width: 100%; 
 }
@@ -160,8 +160,8 @@ width: 50%;
     
 }
 #im{
-    width: 3rem;
-    height: 3rem;
+    width: 8rem;
+    height: 8rem;
 }
 
 
@@ -375,6 +375,7 @@ span:hover {
     border-radius: 2rem;
     margin-left: 10%;
     cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .subscription-container button:hover {
@@ -489,30 +490,19 @@ img {
 }*/
 /* For background image cycling */
 .general {
-    background-image: url('/Pictures/king1.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 600px;
-    width: 100%;
-    margin-top: -7.2%;
-    animation: backgroundChange 15s infinite; /* 15s for one cycle */
+    background-image: url('/Pictures/king.png'); /* Path to your image */
+    background-size: cover; /* Ensures the image covers the entire container */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    height: 90vh; /* Sets the height to full viewport height */
+    width: 100%; /* Sets the width to full container width */
+    margin-top: 0%; /* Adjusts vertical alignment if necessary */
+    display: flex; /* Optional: to align content inside */
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+    position: relative; /* Allows positioning of child elements */
 }
 
-@keyframes backgroundChange {
-    0% {
-        background-image: url('/Pictures/king.png');
-    }
-    33% {
-        background-image: url('/Pictures/good.PNG');
-    }
-    66% {
-        background-image: url('/Pictures/power.PNG');
-    }
-    100% {
-        background-image: url('/Pictures/power2.PNG');
-    }
-}
 
 /* Word Container (To contain individual letters) */
 .word {
@@ -524,77 +514,25 @@ img {
     display: inline-block;
 }
 
-/* Animate the text in #em only */
-#em {
-    font-size: 5rem; /* Increase font size */
-    word-spacing: 3rem; /* Add more space between words */
-    margin-top: 5rem;
-    color: white;
+
+#debate {
+    font-size: 5rem; 
+    color: black;
     margin-left: 26%;
     width: 50%;
-    /* font-family: 'Times New Roman', Times, serif; */
     text-align: center;
     font-weight: bold;
-    animation: fadeInAndMove 15s infinite; /* Animate #em */
+    
 }
 
-/* Keyframes for animating the #em text letter by letter */
-@keyframes fadeInAndMove {
-    0% {
-        opacity: 0;
-        transform: translateX(100%);
-    }
-    25% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-    50% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-    100% {
-        opacity: 0;
-        transform: translateX(-100%);
-    }
-}
-
-/* Individual letter styles for #em */
-#em span {
-    display: inline-block;
-    opacity: 0;
-    word-spacing: 3rem; /* Ensure consistent word spacing */
-    animation: letterAnimation 15s infinite;
-    animation-timing-function: ease-in-out;
-}
-
-@keyframes letterAnimation {
-    0% {
-        opacity: 0;
-        transform: translateX(100%);
-    }
-    20% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-    80% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-    100% {
-        opacity: 0;
-        transform: translateX(-100%);
-    }
-}
-
-/* Keep #um constant */
+  
 #um {
     font-size: 1.8rem;
     margin-left: 20%;
-    width: 100%;
-    /* font-family: 'Times New Roman', Times, serif; */
+    width: 60%;
     text-align: center;
     font-weight: lighter;
-    color: white;
-    margin-top: 8rem;
-    animation: none; /* Ensures no animation on #um */
+    color: black;
+    margin-top: 3rem;
+  
 }

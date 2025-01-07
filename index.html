@@ -22,7 +22,7 @@
     <main>
         <div class="general">
             <div class="word">
-                <p id="em">Empower Your Debate Skills</p> <!-- This text will be split and animated letter by letter -->
+                <p id="debate">Empower Your Debate Skills</p> <!-- This text will be split and animated letter by letter -->
                 <p id="um">Welcome to the ASYV Debate Blog where public speaking 
                     transforms into extraordinary ideas.</p>
             </div>
@@ -108,30 +108,37 @@
     <p id="le">Learn More about effective public speaking</p>
     <hr id="ir">
     <div class="follow">
-        <!-- Section 1 -->
         <div class="full">
             <img src="/Pictures/mike.PNG" alt="source" id="mi">
             <p id="title">Mastering public speaking</p>
             <p id="small-detail1" class="small-detail">Public speaking can be daunting, but</p>
-            <p id="full-detail1" class="full-detail">with practice and the right techniques, it can be mastered effectively. This involves improving confidence, voice modulation, and audience engagement.</p>
+            <p id="full-detail1" class="full-detail" style="display: none;">
+                With practice and the right techniques, it can be mastered effectively. This involves improving confidence, voice modulation, and audience engagement.
+            </p>
             <span onclick="toggleDetails('full-detail1', this)">...</span>
             <hr id="line">
         </div>
+        
         <!-- Section 2 -->
         <div class="full">
             <img src="/Pictures/mike.PNG" alt="source" id="mi">
             <p id="title">Improving communication</p>
             <p id="small-detail2" class="small-detail">Effective communication starts with</p>
-            <p id="full-detail2" class="full-detail">understanding your audience, structuring your speech clearly, and practicing delivery techniques to ensure your message is impactful.</p>
+            <p id="full-detail2" class="full-detail" style="display: none;">
+                Understanding your audience, structuring your speech clearly, and practicing delivery techniques to ensure your message is impactful.
+            </p>
             <span onclick="toggleDetails('full-detail2', this)">...</span>
             <hr id="line">
         </div>
+        
         <!-- Section 3 -->
         <div class="full">
             <img src="/Pictures/mike.PNG" alt="source" id="mi">
             <p id="title">Overcoming stage fear</p>
             <p id="small-detail3" class="small-detail">Stage fear can be reduced by</p>
-            <p id="full-detail3" class="full-detail">visualizing success, breathing exercises, and gradual exposure to speaking situations to build confidence.</p>
+            <p id="full-detail3" class="full-detail" style="display: none;">
+                Visualizing success, breathing exercises, and gradual exposure to speaking situations to build confidence.
+            </p>
             <span onclick="toggleDetails('full-detail3', this)">...</span>
             <hr id="line">
         </div>
@@ -156,17 +163,7 @@
     <p id="as">asyvdebate@asyv.org</p>
 </div>
    </main>
-      <script>
-            const form = document.getElementById('subscription-form');
-            const successMessage = document.getElementById('success-message');
-    
-            form.addEventListener('submit', function (e) {
-                e.preventDefault();
-                successMessage.style.display = 'block';
-                form.reset();
-            });
-        </script>
-    <script>
+   <script>
     function toggleDetails(fullDetailId, spanElement) {
         const fullDetail = document.getElementById(fullDetailId);
 
