@@ -98,7 +98,15 @@ main {
 #am{
     grid-area: left;
     margin-top: 6rem;
-    margin-left: 43rem;
+    margin-left: 49rem;
+    font-size: 2rem;
+  /*  font-family: 'Times New Roman', Times, serif;*/
+}
+#event{
+    grid-area: left;
+    margin-top: 6rem;
+    text-align: center;
+    /* margin-left: 40rem; */
     font-size: 2rem;
   /*  font-family: 'Times New Roman', Times, serif;*/
 }
