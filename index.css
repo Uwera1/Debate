@@ -144,7 +144,7 @@ font-size: 1.3rem;
 #sion{
     font-weight: bold;
     font-size: 1.6rem;
-    margin-top: 5%;
+    margin-top: 10%;
     color: black;
 
 width: 100%;
@@ -448,7 +448,9 @@ img {
 
 #su{
     margin-left: -70%;
-    margin-top:-20%;
+    width: 20%;
+    height: 20%;
+    margin-top:20%;
 }
 
 @media (max-width: 600px) {
