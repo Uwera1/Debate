@@ -90,14 +90,18 @@ main {
 
 
 #ak {
-    margin-top: 60%;
+    width: 70%;
+    height: 45%;
+    margin-top: 80%;
     margin-left: -40rem;
     grid-area: center;
     justify-self: center;
 }
 #am{
     grid-area: left;
-    margin-top: 6rem;
+    width: 50%;
+    height: 40%;
+    margin-top: 5rem;
     margin-left: 49rem;
     font-size: 2rem;
   /*  font-family: 'Times New Roman', Times, serif;*/
@@ -116,7 +120,7 @@ main {
    
     font-size: 1.6rem;
 
-    margin-top: -20%;
+    margin-top: -40%;
 }
 #ua{
     margin-left: 10%;
@@ -131,7 +135,7 @@ font-size: 1.3rem;
     font-weight: bold;
      font-size: 1.6rem;
     
-    margin-top: -30%;
+    margin-top: -52%;
     
 }
 .mubye{
@@ -411,11 +415,11 @@ span:hover {
 /* Styling for the #se image */
 #se {
     display: block;
+    width: 20%;
+    height: 10%;
     margin-right: 4%;
     margin-top: 7%;
     margin-left:7% ;
-    max-width: 50%; /* Limit the width of the image */
-    height: auto; /* Maintain aspect ratio */
 }
 
 
@@ -490,7 +494,7 @@ img {
 }*/
 /* For background image cycling */
 .general {
-    background-image: url('/Pictures/king.png'); /* Path to your image */
+    background-image: url('/Pictures/picone.jpg'); /* Path to your image */
     background-size: cover; /* Ensures the image covers the entire container */
     background-position: center; /* Centers the image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
@@ -517,7 +521,7 @@ img {
 
 #debate {
     font-size: 5rem; 
-    color: black;
+    color: white;
     margin-left: 26%;
     width: 50%;
     text-align: center;
@@ -532,7 +536,7 @@ img {
     width: 60%;
     text-align: center;
     font-weight: lighter;
-    color: black;
+    color: white;
     margin-top: 3rem;
   
 }
