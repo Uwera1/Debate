@@ -1,3 +1,8 @@
+<?php
+require 'vendor/autoload.php'; // Include PHPMailer autoloader
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -147,13 +152,24 @@
 <div class="footer">
     <p id="blog">Subscribe to Our blog</p>
     <div class="subscription-container">
-       <form id="subscription-form">
+     <!---<form id="subscription-form">
             <input type="name" id="name" name="name" placeholder="Enter your name   " required>
             <input type="email" id="email" name="email" placeholder="Enter your email" required>
             <button type="submit">Subscribe</button>
         </form>
-        <p class="success-message" id="success-message">Thank you for subscribing!</p>
+        <p class="success-message" id="success-message">Thank you for subscribing!</p>--->  
+        <form id="subscription-form" action="subscribe.php" method="POST">
+    <input type="name" id="name" name="name" placeholder="Enter your name" required>
+    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    <button type="submit">Subscribe</button>
+</form>
+<p class="success-message" id="success-message">
+    <?php if (isset($_GET['subscription']) && $_GET['subscription'] == 'success') {
+        echo "Thank you for subscribing! You will receive updates soon.";
+    } ?>
+</p>
     </div>
+
 <h1 id="a">ASYV Debate Blog</h1>
     <div class="um">
     <img src=".\Pictures\facebook.png" alt="site" id="site">
