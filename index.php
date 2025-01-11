@@ -11,11 +11,11 @@
 <body>
     <header>
         <nav>
-            <img src="/Pictures/asyv.png" alt="site" id="im">
+            <img src=".\Pictures\asyv.png" alt="site" id="im">
             <h1>ThunderBirds Blog</h1>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="blog.html">Learn</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="blog.php">Learn</a></li>
             </ul>
         </nav>
       </header>
@@ -29,7 +29,7 @@
         </div>
         <div class="main">
             <div>
-                <img src="/Pictures/linet.jpg" alt="site" id="am">
+                <img src=".\Pictures\linet.jpg" alt="site" id="am">
                 <p id="us">About us</p>
                 <p id="ua">ASYV ThunderBirds is a club 
                     founded by Frank Ntambara, who recognized 
@@ -41,7 +41,7 @@
                 </p>
             </div>
             <div class="mubye">
-                <img src="/Pictures/competi.jpg" alt="site" id="ak">
+                <img src=".\Pictures\competi.jpg" alt="site" id="ak">
                 <p id="vi">Our vision</p>
                 <p  id="vision">Through public speaking facilitation, we aspire to a society where everyone can express themselves fluently and 
                     confidently, without difficulty or hesitation
@@ -66,12 +66,12 @@
              develop strong public speaking skills, enabling them to 
              communicate confidently, express themselves clearly, and explore 
             new possibilities for personal and professional growth.</p>
-        <img src="/Pictures/dream.jpg" alt="site" id="se">
+        <img src=".\Pictures\dream.jpg" alt="site" id="se">
         
        </div>
        
        <div class="final">
-        <img src="/Pictures/competi.jpg" alt="site" id="su">      
+        <img src=".\Pictures\king.PNG" alt="site" id="su">      
     </div>
     <p id="event">Events</p>
     <div class="event">
@@ -133,7 +133,7 @@
         
         <!-- Section 3 -->
         <div class="full">
-            <img src="/Pictures/mike.PNG" alt="source" id="mi">
+            <img src=".\Pictures\mike.PNG" alt="source" id="mi">
             <p id="title">Overcoming stage fear</p>
             <p id="small-detail3" class="small-detail">Stage fear can be reduced by</p>
             <p id="full-detail3" class="full-detail" style="display: none;">
@@ -156,9 +156,9 @@
     </div>
 <h1 id="a">ASYV Debate Blog</h1>
     <div class="um">
-    <img src="/Pictures/facebook.png" alt="site" id="site">
-    <img src="/Pictures/instagram.png" alt="site" id="site">
-    <img src="/Pictures/twitter.png" alt="site" id="site">
+    <img src=".\Pictures\facebook.png" alt="site" id="site">
+    <img src=".\Pictures\instagram.png" alt="site" id="site">
+    <img src=".\Pictures\twitter.png" alt="site" id="site">
     </div>
     <p id="as">asyvdebate@asyv.org</p>
 </div>
