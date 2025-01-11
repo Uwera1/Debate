@@ -23,8 +23,8 @@
             <img src="/Pictures/asyv.png" alt="site" id="im">
             <h1>ThunderBirds Blog</h1>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="blog.html">Learn</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="blog.php">Learn</a></li>
             </ul>
         </nav>
     </header>
