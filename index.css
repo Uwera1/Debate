@@ -311,7 +311,8 @@ span:hover {
     color: white;
     padding: 40px 20px;
     text-align: center;
-    height: 194px;
+    
+    /*height: 100%;*/
 }
 
 .um {
@@ -541,9 +542,4 @@ img {
     color: white;
     margin-top: 3rem;
   
-}
-.message {
-    color: red;
-    font-size: 16px;
-    margin-bottom: 10px;
 }

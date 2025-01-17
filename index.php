@@ -22,7 +22,7 @@ require 'vendor/autoload.php'; // Include PHPMailer autoloader
             font-size: 18px;
             font-weight: bold;
            /* margin: 10px auto;*/
-           
+           margin-top:-3%;
             padding: 10px;
             max-width: 400px;
             border-radius: 5px;
