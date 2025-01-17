@@ -1,5 +1,48 @@
 <?php
 
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "debate";
+
+
+$conn = new mysqli($servername, $username, $password, $database);
+
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully";
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $nameOfUser = $_POST['name'];
+    $userEmail = $_POST['email'];
+
+    // Validate input (basic validation)
+    if (!empty($nameOfUser) && !empty($userEmail)) {
+        // Insert data into the table
+        $stmt = $conn->prepare("INSERT INTO subscribers (full_name, email) VALUES (?, ?)");
+        $stmt->bind_param("ss", $nameOfUser, $userEmail);
+
+        if ($stmt->execute()) {
+            echo "Data inserted successfully!";
+        } else {
+            echo "Error: " . $stmt->error;
+        }
+
+        // Close the statement
+        $stmt->close();
+    } else {
+        echo "Please fill in all fields.";
+    }
+}
+
+
+$conn->close();
+?>
+
+<?php
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 require 'vendor/autoload.php'; // Include PHPMailer autoloader
@@ -187,9 +230,43 @@ require 'vendor/autoload.php'; // Include PHPMailer autoloader
         <?php
         $userEmail = '';
         $nameOfUser = '';
+
+        // if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        //     $nameOfUser = $_POST['name'];
+        //     $userEmail = $_POST['email'];
+        
+        //     // Validate input (basic validation)
+        //     if (!empty($nameOfUser) && !empty($userEmail)) {
+        //         // Insert data into the table
+        //         $stmt = $conn->prepare("INSERT INTO subscribers (full_name, email) VALUES (?, ?)");
+        //         $stmt->bind_param("ss", $nameOfUser, $userEmail);
+        
+        //         if ($stmt->execute()) {
+        //             echo "Data inserted successfully!";
+        //         } else {
+        //             echo "Error: " . $stmt->error;
+        //         }
+        
+        //         // Close the statement
+        //         $stmt->close();
+        //     } else {
+        //         echo "Please fill in all fields.";
+        //     }
+        // }
         if (isset($_POST['subscribe'])){
             $userEmail = $_POST['email'];
             $nameOfUser = $_POST['name'];
+
+            // $conn = new mysqli('localhost', 'root', '', 'debate');
+
+            // if ($conn->connect_error) {
+            //     die("Connection failed: " . $conn->connect_error);
+            //     echo "There is an error";
+            // }
+        
+            // $stmt = $conn->prepare("INSERT INTO subscribers (full_name, email) VALUES (?, ?)");
+            // $stmt->bind_param("ss", $nameOfUser, $userEmail);
+        
 
             if(filter_var($userEmail, FILTER_VALIDATE_EMAIL)){
 
