@@ -1,49 +1,68 @@
 <?php
-// Database connection
-$servername = "localhost";
-$username = "root"; // Your database username
-$password = ""; // Your database password
-$dbname = "debate"; // Your database name
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+require 'path/to/PHPMailer/src/Exception.php';
+require 'path/to/PHPMailer/src/PHPMailer.php';
+require 'path/to/PHPMailer/src/SMTP.php';
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Get form data
-    $name = $_POST['name'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['email']) && isset($_POST['full_name'])) {
+    $full_name = $_POST['full_name'];
     $email = $_POST['email'];
 
-    // Insert the subscriber into the database
-    $sql = "INSERT INTO subscribers (name, email) VALUES ('$name', '$email')";
+    // Save subscription to the database
+    $conn = new mysqli('localhost', 'root', '', 'debate');
 
-    if ($conn->query($sql) === TRUE) {
-        // Admin email
-        $admin_email = "shukuraniyvan@gmail.com";
-        $admin_subject = "New Subscription to ASYV Debate Blog";
-        $admin_message = "Hello Admin,\n\nA new user has subscribed to your blog:\n\nName: $name\nEmail: $email";
-        
-        // Send email to admin
-        mail($admin_email, $admin_subject, $admin_message);
-        
-        // Subscriber's confirmation message
-        $subscriber_subject = "Thank you for subscribing to ASYV Debate Blog!";
-        $subscriber_message = "Hello $name,\n\nThank you for subscribing to the ASYV Debate Blog. Stay tuned for weekly updates!";
-        
-        // Send email to subscriber
-        mail($email, $subscriber_subject, $subscriber_message);
-        
-        // Redirect back to the blog with a success message
-        header("Location: index.php?subscription=success");
-        exit();
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
     }
-    
+
+    $stmt = $conn->prepare("INSERT INTO subscribers (full_name, email) VALUES (?, ?)");
+    $stmt->bind_param("ss", $full_name, $email);
+
+    if ($stmt->execute()) {
+        // Send email to the subscriber
+        $mail = new PHPMailer(true);
+
+        try {
+            // Server settings
+            $mail->isSMTP();
+            $mail->Host = 'smtp.gmail.com'; // Replace with your email provider's SMTP server
+            $mail->SMTPAuth = true;
+            $mail->Username = 'your-email@gmail.com'; // Replace with your email
+            $mail->Password = 'your-email-password'; // Replace with your email password
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port = 587;
+
+            // Email to the subscriber
+            $mail->setFrom('your-email@gmail.com', 'Your Blog Name');
+            $mail->addAddress($email);
+
+            $mail->isHTML(true);
+            $mail->Subject = 'Subscription Confirmation';
+            $mail->Body = "Hello $full_name,<br><br>Thank you for subscribing to our blog. You will receive updates soon!";
+
+            $mail->send();
+
+            // Notify admin
+            $mail->clearAddresses();
+            $mail->addAddress('your-email@gmail.com'); // Admin email
+            $mail->Subject = 'New Subscriber Notification';
+            $mail->Body = "A new subscriber has joined:<br><br>Full Name: $full_name<br>Email: $email";
+
+            $mail->send();
+
+            // Redirect with success message
+            header("Location: index.php?subscription=success");
+            exit;
+        } catch (Exception $e) {
+            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        }
+    } else {
+        echo "Error: " . $stmt->error;
+    }
+
+    $stmt->close();
     $conn->close();
 }
 ?>

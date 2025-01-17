@@ -1,4 +1,7 @@
 <?php
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 require 'vendor/autoload.php'; // Include PHPMailer autoloader
 
 ?>
@@ -13,6 +16,28 @@ require 'vendor/autoload.php'; // Include PHPMailer autoloader
     
     <title>Debate Blog</title>  
 </head>
+<style>
+        .message {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+           /* margin: 10px auto;*/
+           
+            padding: 10px;
+            max-width: 400px;
+            border-radius: 5px;
+        }
+        .message.success {
+            color: #155724;
+        }
+        .message.error {
+            color: #721c24;
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+        }
+        
+        
+    </style>
 <body>
     <header>
         <nav>
@@ -114,7 +139,7 @@ require 'vendor/autoload.php'; // Include PHPMailer autoloader
     <hr id="ir">
     <div class="follow">
         <div class="full">
-            <img src="/Pictures/mike.PNG" alt="source" id="mi">
+            <img src=".\Pictures\mike.PNG" alt="source" id="mi">
             <p id="title">Mastering public speaking</p>
             <p id="small-detail1" class="small-detail">Public speaking can be daunting, but</p>
             <p id="full-detail1" class="full-detail" style="display: none;">
@@ -126,7 +151,7 @@ require 'vendor/autoload.php'; // Include PHPMailer autoloader
         
         <!-- Section 2 -->
         <div class="full">
-            <img src="/Pictures/mike.PNG" alt="source" id="mi">
+            <img src=".\Pictures\mike.PNG" alt="source" id="mi">
             <p id="title">Improving communication</p>
             <p id="small-detail2" class="small-detail">Effective communication starts with</p>
             <p id="full-detail2" class="full-detail" style="display: none;">
@@ -158,11 +183,61 @@ require 'vendor/autoload.php'; // Include PHPMailer autoloader
             <button type="submit">Subscribe</button>
         </form>
         <p class="success-message" id="success-message">Thank you for subscribing!</p>--->  
-        <form id="subscription-form" action="subscribe.php" method="POST">
-    <input type="name" id="name" name="name" placeholder="Enter your name" required>
-    <input type="email" id="email" name="email" placeholder="Enter your email" required>
-    <button type="submit">Subscribe</button>
-</form>
+    <form id="subscription-form" action="index.php" method="POST">
+        <?php
+        $userEmail = '';
+        $nameOfUser = '';
+        if (isset($_POST['subscribe'])){
+            $userEmail = $_POST['email'];
+            $nameOfUser = $_POST['name'];
+
+            if(filter_var($userEmail, FILTER_VALIDATE_EMAIL)){
+
+                $mail = new PHPMailer(true);
+
+                try {
+                    //Server settings
+                    $mail->isSMTP();                                            // Send using SMTP
+                    $mail->Host       = 'smtp.gmail.com';                     // Set the SMTP server to send through
+                    $mail->SMTPAuth   = true;                                 // Enable SMTP authentication
+                    $mail->Username   = 'shukuraniyvan@gmail.com';               // SMTP username
+                    $mail->Password   = 'lnxp saer ztnw anmj';                      // SMTP password
+                    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;      // Enable TLS encryption
+                    $mail->Port       = 587;                                  // TCP port to connect to
+
+                    //Recipients
+                    $mail->setFrom('shukuraniyvan@gmail.com', 'Shukurani');
+                    $mail->addAddress($userEmail, $nameOfUser);   // Add a recipient
+
+                    // Content
+                    $mail->isHTML(true);                                      // Set email format to HTML
+                    $mail->Subject = 'Here is the subject';
+                    $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+                    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+                    $mail->send();
+                    $message = "Message has been sent";
+                    } catch (Exception $e) {
+                        $message =  "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+                    }
+            }
+            else{
+                $message = "Invalid email";
+            }
+        }
+
+        ?>
+         
+         <?php if (!empty($message)): ?>
+        <div class="message <?php echo filter_var($userEmail, FILTER_VALIDATE_EMAIL) ? 'success' : 'error'; ?>">
+            <?php echo $message; ?>
+        </div>
+        <?php endif; ?>
+
+        <input type="name" id="name" name="name" placeholder="Enter your name" required>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        <button type="submit" name="subscribe">Subscribe</button>
+    </form>
 <p class="success-message" id="success-message">
     <?php if (isset($_GET['subscription']) && $_GET['subscription'] == 'success') {
         echo "Thank you for subscribing! You will receive updates soon.";
