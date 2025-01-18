@@ -223,7 +223,7 @@ mysqli_close($conn);
 ?>
 
 <div class="foot">
-    <p id="le">Learn More about effective public speaking</p>
+    <p id="le">Explore more about thunderbirds achivements</p>
     <hr id="ir">
     <div class="follow">
         <div class="full">

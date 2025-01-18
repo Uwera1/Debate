@@ -8,15 +8,40 @@ body{
     display:flex;
 }
 h1{
-    margin-left: 100%;
+    /* margin-left: 100%; */
     margin-top: 15%;
     width: 100%;
 
 }
+.left{
+    width: 30%;
+    height:40rem ;
+    top: 0;
+    left: 0;
+}
+.img{
+    display: flex;
+
+}
+#p{
+    margin-top: 50px;
+    margin-left: 10px;
+}
+main{
+    display: flex;
+    flex-direction: row;
+}
+#id{
+    width: 100px;
+    height: 105px;
+    border-radius: 53px;
+    margin-top: 30px;
+    margin-left: -52%;
+}
 form {
     width: 300px;
     margin-top: 5%;
-    margin-left: 100%;
+    /* margin-left: 100%; */
     padding: 15px;
     border: 1px solid #ccc;
     border-radius: 8px;

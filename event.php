@@ -8,12 +8,20 @@
     <title>Document</title>
 </head>
 <body>
-<div class="down">
+<div class="left">
+            <div class="img">
+                <img id="id" src=".\Pictures\dream.jpg" alt="site">
+                <p id="p">ADMIN </p>
+            </div>
+            <div class="down">
                 <a href="register.php"><button class="joinBtn">Add lessons</button><a>
                 <a href="event.php"><button class="joinBtn">Add event</button><a>
+                <a href="info.php"><button class="joinBtn">Add information</button><a>
 
                 <a href="admin.php"><button class="joinBtn">Logout</button><a>  
             </div>
+        
+           </div>
             <h1>Add upcoming events</h1>
     <form action="index.php" method="POST" id="form">
         <label for="event_date" id="label">Event Date:</label>
