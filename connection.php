@@ -1,43 +1,60 @@
 <?php 
-$conn=mysqli_connect("localhost","root","","debate");
+// Connect to the MySQL database
+$conn = mysqli_connect("localhost", "root", "", "debate");
 
-if (isset($_POST['adminsub'])){
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+// Login authentication (admin)
+if (isset($_POST['adminsub'])) {
     $email = $_POST['email'];
     $pswd = $_POST['pass'];
-    $shukur = "SELECT *FROM `login` WHERE `email`= '$email' and `Pasword` = '$pswd'";
-    $quest = mysqli_query($conn, $shukur);
-    $row = mysqli_fetch_assoc($quest);
+
+    // Prepared statement to prevent SQL injection
+    $stmt = $conn->prepare("SELECT * FROM `login` WHERE `email` = ? AND `Pasword` = ?");
+    $stmt->bind_param("ss", $email, $pswd); // Bind parameters (email and password)
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $row = $result->fetch_assoc();
+
     if ($row) {
         session_start();
-        $_SESSION['email'] = $row['email'];
+        $_SESSION['email'] = $row['email']; // Store session
         header('location: register.php');
-    }
-    else {
+    } else {
         echo "Incorrect password or email";
     }
-    
 }
+
 if (isset($_POST["submit"])) {
-    // File upload handling
-    $uploadDir = "Pictures/dbimages/"; // Directory where you want to store the pictures
-    $uploadFile = $uploadDir . basename($_FILES['avatar']['name']);
+    // Check if the required fields are not empty
+    if (empty($_POST["Title"]) || empty($_POST["details"]) || empty($_FILES["avatar"]["name"])) {
+        echo "Please fill in all the required fields.";
+    } else {
+        $uploadDir = "Pictures/dbimages/";
+        $uploadFile = $uploadDir . basename($_FILES['avatar']['name']);
 
-    if (move_uploaded_file($_FILES['avatar']['tmp_name'], $uploadFile)) {
-        // File successfully uploaded
-        $picture = $uploadFile;
-        $title = $_POST["Title"];
-        $description = $_POST["details"];
+        if (move_uploaded_file($_FILES['avatar']['tmp_name'], $uploadFile)) {
+            // File successfully uploaded
+            $picture = $uploadFile;
+            $title = $_POST["Title"];
+            $description = $_POST["details"];
 
-        // Your database connection code (assuming $conn is defined somewhere)
-        
-        // SQL query to insert data into the database
-        $query = "INSERT INTO homepage (Picture, Title, Details) VALUES ('$picture', '$title', '$description')";
+            // Query to insert the data into the database
+            $query = "INSERT INTO blog (Picture, Title, Description) VALUES ('$picture', '$title', '$description')";
 
-        // Execute the query
-        mysqli_query($conn, $query);
-        
-       
-}
-
+            if (mysqli_query($conn, $query)) {
+                echo "Data successfully inserted into the blog table!";
+            } else {
+                echo "Error: " . mysqli_error($conn);
+            }
+        } else {
+            echo "File upload failed.";
+        }
+    }
 }
 ?>
+
+
+

@@ -42,24 +42,21 @@ header {
         width: 100%;
     }
 
-    #title {
-        font-size: 1.5rem;
-    }
+ 
 
  
 }
 nav {
     display: flex;
     align-items: center;
-    justify-content: center; /* Center the entire nav content */
-    width: 100%; /* Ensures full width */
+    justify-content: center; 
+    width: 100%; 
 }
 
 nav h1 {
     font-size: 2rem;
     color: white;
     margin-left: 8%;
-  /*  font-family: 'Times New Roman', Times, serif;*/
     position: absolute;
     left: 20px;
 }
@@ -76,7 +73,7 @@ nav ul {
 }
 
 nav ul li {
-    display: inline-block; /* Keep items inline */
+    display: inline-block; 
 }
 
 nav ul li a {
@@ -88,7 +85,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #f1c40f; /* Add a hover effect */
+    color: #f1c40f; 
 }
 main {
     padding-top: 100px;
@@ -99,7 +96,7 @@ li a {
     color: white;
 }
 #p{
-    margin-left: 45%;
+    margin-left: 35%;
     color: black;
     font-size: 1.3rem;
   
@@ -140,15 +137,14 @@ li a {
     font-size: 2rem;
     color: #333;
     text-align: left;
-
-    width: 30rem;
+    width: 42rem;
+    margin-top: -2%;
     margin-left: 3%;
 }
 
 #detail {
     font-size: 1.2rem;
     color: #666;
-    margin-top: 5%;
     margin-left: 3%;
     
 
@@ -188,13 +184,15 @@ li a {
     color: white;
 
 }
+.post-img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
 
 .subscription-container {
-    /* background: #333; */
     height: 10rem;
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
-    text-align: center;
-    
+    text-align: center; 
     max-width: 100%;
     margin-top: 30px;
 }

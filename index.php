@@ -5,9 +5,7 @@ $username = "root";
 $password = "";
 $database = "debate";
 
-
 $conn = new mysqli($servername, $username, $password, $database);
-
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -15,31 +13,36 @@ if ($conn->connect_error) {
 echo "Connected successfully";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $nameOfUser = $_POST['name'];
-    $userEmail = $_POST['email'];
+    // Check if the form data exists before using it
+    if (isset($_POST['name']) && isset($_POST['email'])) {
+        $nameOfUser = $_POST['name'];
+        $userEmail = $_POST['email'];
 
-    // Validate input (basic validation)
-    if (!empty($nameOfUser) && !empty($userEmail)) {
-        // Insert data into the table
-        $stmt = $conn->prepare("INSERT INTO subscribers (full_name, email) VALUES (?, ?)");
-        $stmt->bind_param("ss", $nameOfUser, $userEmail);
+        // Validate input (basic validation)
+        if (!empty($nameOfUser) && !empty($userEmail)) {
+            // Insert data into the table
+            $stmt = $conn->prepare("INSERT INTO subscribers (full_name, email) VALUES (?, ?)");
+            $stmt->bind_param("ss", $nameOfUser, $userEmail);
 
-        if ($stmt->execute()) {
-            echo "Data inserted successfully!";
+            if ($stmt->execute()) {
+                echo "Data inserted successfully!";
+            } else {
+                echo "Error: " . $stmt->error;
+            }
+
+            // Close the statement
+            $stmt->close();
         } else {
-            echo "Error: " . $stmt->error;
+            echo "Please fill in all fields.";
         }
-
-        // Close the statement
-        $stmt->close();
-    } else {
-        echo "Please fill in all fields.";
     }
 }
 
-
 $conn->close();
 ?>
+
+<!-- HTML part remains unchanged, as shown in your provided code -->
+
 
 <?php
 
@@ -147,36 +150,78 @@ require 'vendor/autoload.php'; // Include PHPMailer autoloader
         <img src=".\Pictures\king.PNG" alt="site" id="su">      
     </div>
     <p id="event">Events</p>
-    <div class="event">
-        <!---Upcoming Events</h2>---><h2>
+    <?php
+// Connect to the database
+$conn = mysqli_connect("localhost", "root", "", "debate");
+
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+// Check how many events are already in the database
+$checkQuery = "SELECT COUNT(*) AS event_count FROM events";
+$checkResult = mysqli_query($conn, $checkQuery);
+$row = mysqli_fetch_assoc($checkResult);
+$eventCount = $row['event_count'];
+
+// If there are already 4 events, delete the first one (oldest event)
+if ($eventCount >= 4) {
+    $deleteQuery = "DELETE FROM events ORDER BY event_date ASC LIMIT 1";
+    mysqli_query($conn, $deleteQuery);
+}
+
+// If the form is submitted, insert a new event into the database
+if (isset($_POST['submit'])) {
+    $eventDate = $_POST['event_date'];
+    $eventName = $_POST['event_name'];
+    $eventLocation = $_POST['event_location'];
+
+    // Insert the new event into the events table
+    $insertQuery = "INSERT INTO events (event_date, event_name, event_location) VALUES ('$eventDate', '$eventName', '$eventLocation')";
+    if (mysqli_query($conn, $insertQuery)) {
+       // echo "New event added successfully!";
+    } else {
+        echo "Error: " . mysqli_error($conn);
+    }
+}
+
+// Query to get all events from the events table
+$query = "SELECT * FROM events ORDER BY event_date DESC";
+$result = mysqli_query($conn, $query);
+
+if (!$result) {
+    echo "Error fetching data from the database: " . mysqli_error($conn);
+}
+?>
+
+<!-- Display the events on the page -->
+<div class="event">
+    <!-----<h2>Upcoming Events</h2>---->
     <div class="events">
-        <!-- Individual Event Items -->
-        <div class="event-item">
-            <p class="date">July 10, 2024</p>
-            <p class="name">Interclass debate</p>
-            <p class="new">School</p>
-
-        </div>
-        <div class="event-item">
-            <p class="date">July 12, 2024</p>
-            <p class="name">Idebate competition</p>
-            <p class="new">Rwamagana</p>
-
-        </div>
-        <div class="event-item">
-            <p class="date">July 15, 2024</p>
-            <p class="name">Inter family debate</p>
-            <p class="new">Orange Club House</p>
-
-        </div>
-        <div class="event-item">
-            <p class="date">July 18, 2024</p>
-            <p class="name">Intergrade debate</p>
-            <p class="new">Dinning Hall</p>
-
-        </div>
+        <?php
+        // Loop through the fetched events and display each one
+        while ($row = mysqli_fetch_assoc($result)) {
+            $eventDate = $row['event_date'];
+            $eventName = $row['event_name'];
+            $eventLocation = $row['event_location'];
+        ?>
+            <div class="event-item">
+                <p class="date"><?php echo date("F j, Y", strtotime($eventDate)); ?></p>
+                <p class="name"><?php echo $eventName; ?></p>
+                <p class="new"><?php echo $eventLocation; ?></p>
+            </div>
+        <?php
+        }
+        ?>
     </div>
 </div>
+
+<?php
+// Close the database connection
+mysqli_close($conn);
+?>
+
 <div class="foot">
     <p id="le">Learn More about effective public speaking</p>
     <hr id="ir">

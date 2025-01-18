@@ -30,53 +30,85 @@
     </header>
     <main>
         <p id="p">Posts</p>
-        <div class="follow">
-            <!-- Post 1 -->
-            <div class="full">
-                <div class="photo">
-                    <img src=".\Pictures\expe.PNG" alt="site" id="mi">
-                </div>
-                <div class="side">
-                    <p id="title">Mastering Public Speaking</p>
-                    <p id="detail">
-                        Public speaking is a skill that can be daunting for many, but with practice and the right techniques, it can be mastered effectively.
-                        <span class="hidden-content"> This involves understanding your audience, preparing thoroughly, and using body language effectively to engage listeners.</span>
-                        <span class="toggle-button" onclick="toggleContent(this)"> more</span>
-                    </p>
-                      <!----<hr id="line">---->
-                </div>
+        <?php
+// Connect to the database
+$conn = mysqli_connect("localhost", "root", "", "debate");
+
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+// Check how many posts exist in the database
+$queryCount = "SELECT COUNT(*) AS total_posts FROM blog";
+$resultCount = mysqli_query($conn, $queryCount);
+$rowCount = mysqli_fetch_assoc($resultCount);
+$totalPosts = $rowCount['total_posts'];
+
+// If there are already 4 posts, delete the first one (oldest)
+if ($totalPosts >= 4) {
+    $deleteQuery = "DELETE FROM blog ORDER BY id ASC LIMIT 1"; // Assuming 'id' is the primary key and auto-incremented
+    mysqli_query($conn, $deleteQuery);
+}
+
+// Query to get all posts from the blog table
+$query = "SELECT * FROM blog ORDER BY id DESC"; // Get posts ordered by most recent
+$result = mysqli_query($conn, $query);
+
+if (!$result) {
+    echo "Error fetching data from the database: " . mysqli_error($conn);
+}
+?>
+
+<div class="follow">
+    <?php
+    // Loop through the fetched posts and display each one
+    while ($row = mysqli_fetch_assoc($result)) {
+        // Fetch picture, title, and description for each post
+        $picture = $row['Picture'];
+        $title = $row['Title'];
+        $description = $row['Description'];
+    ?>
+        <!-- Post -->
+        <div class="full">
+            <div class="photo">
+                <img src="<?php echo $picture; ?>" alt="site" class="post-img">
             </div>
-            <!-- Post 2 -->
-            <div class="full">
-                <div class="photo">
-                    <img src=".\Pictures\expe.PNG" alt="site" id="mi">
-                </div>
-                <div class="side">
-                    <p id="title">Building Confidence: Public Speaking for Students</p>
-                    <p id="detail">
-                        Are you a student looking to boost your confidence in public speaking? Whether you're preparing for a class presentation, a debate competition, or simply want to improve your communication skills...
-                        <span class="hidden-content"> Confidence in public speaking is essential and can enhance both academic and personal growth. Start with small audiences, practice often, and seek constructive feedback.</span>
-                        <span class="toggle-button" onclick="toggleContent(this)"> more</span>
-                    </p>
-                      <!----<hr id="line">---->
-                </div>
-            </div>
-            <!-- Post 3 -->
-            <div class="full">
-                <div class="photo">
-                    <img src=".\Pictures\good.PNG" alt="site" id="mi">
-                </div>
-                <div class="side">
-                    <p id="title">How to Be a Good Listener?</p>
-                    <p id="detail">
-                        Being engaged and hardworking can make you a good listener.
-                        <span class="hidden-content"> Additionally, focus on understanding the speaker, ask relevant questions, and provide thoughtful feedback to show genuine interest.</span>
-                        <span class="toggle-button" onclick="toggleContent(this)">more</span>
-                    </p>
-                    <!----<hr id="line">---->
-                </div>
+            <div class="side">
+                <p id="title"><?php echo $title; ?></p>
+                <p id="detail">
+                    <?php echo substr($description, 0, 150); ?> <!-- Show first 150 characters -->
+                    <span class="hidden-content"><?php echo substr($description, 150); ?></span> <!-- Show the rest when toggled -->
+                    <span class="toggle-button" onclick="toggleContent(this)"> more</span>
+                </p>
+                <!-- <hr id="line"> -->
             </div>
         </div>
+    <?php
+    }
+    ?>
+</div>
+
+<script>
+// Toggle the content visibility
+function toggleContent(button) {
+    var hiddenContent = button.previousElementSibling;
+    if (hiddenContent.style.display === "none") {
+        hiddenContent.style.display = "inline";
+        button.innerText = " less";
+    } else {
+        hiddenContent.style.display = "none";
+        button.innerText = " more";
+    }
+}
+</script>
+
+<?php
+// Close the database connection
+mysqli_close($conn);
+?>
+
+
         <div class="footer">
             <p id="blog">Subscribe to Our Blog</p>
             <div class="subscription-container">
