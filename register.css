@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color:#429D22;
+}
+#id{
+    width: 100px;
+    height: 105px;
+    border-radius: 53px;
+    margin-top: 30px;
+    margin-left: 25%;
+}
+.left{
+    width: 30%;
+    height:40rem ;
+    top: 0;
+    left: 0;
+    background-color:#498160;
+}
+.img{
+    display: flex;
+
+}
+#p{
+    margin-top: 50px;
+    margin-left: 10px;
+}
+#f{
+  width: 10em;
+  height: 5ex;
+  background-color: white;
+  border: 2px solid #6C5736;
+  border-radius: 10px;
+  font-weight: bold;
+  color: black;
+  cursor: pointer;
+  margin-left: 20%;
+}
+.joinBtn {
+  width: 10em;
+  height: 5ex;
+  background-color: #C1B79D;
+  border: 2px solid #6C5736;
+  border-radius: 10px;
+  font-weight: bold;
+  color: black;
+  cursor: pointer;
+  margin-left: 20%;
+}
+
+.joinBtn:hover {
+  background-color: bisque;
+}
+#e{
+  width: 10em;
+  height: 5ex;
+  background-color: #ECA145;
+  border: 2px solid #645037;
+  border-radius: 10px;
+  font-weight: bold;
+  color: black;
+  cursor: pointer;
+  margin-left: 20%;
+}
+#e:hover{
+  background-color: green;
+}
+.down{
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    padding-top: 20px;
+}
+main{
+    display: flex;
+    flex-direction: rows;
+}
+#form {
+    background-color:none;
+    padding: 20px;
+  display: flex;
+  flex-direction: column;
+    margin-top: 40px;
+    margin-left: 20px;
+  }
+  
+  #la {
+    display: block;
+    font:1rem 'Fira Sans',
+      sans-serif;
+      font-size: 30px;
+      display: flex;
+      flex-direction: row;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-style: italic ;
+    margin-bottom: 3%;
+      
+  }
+  #avatar{
+    height: 30px;
+    font-size: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border-radius: 20px;
+    background-color: antiquewhite;
+  }
+  #t{
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-style: italic ;
+    margin-top: 3%;
+    margin-bottom: 3%;
+  }
+  #text{
+    width: 350px;
+height: 40px;
+border-radius: 10px;  }
+#d{
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-style: italic ;
+  }
+  #reg{
+    width: 200px;
+    height: 50px;
+    border-radius: 15px;
+    background-color: antiquewhite;
+    color: red;
+    margin-left: 60px;
+    margin-top: 15%;
+  }
+ 

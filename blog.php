@@ -20,7 +20,7 @@
 <body>
     <header>
         <nav>
-            <img src="/Pictures/asyv.png" alt="site" id="im">
+            <img src=".\Pictures\asyv.png" alt="site" id="im">
             <h1>ThunderBirds Blog</h1>
             <ul>
                 <li><a href="index.php">Home</a></li>
@@ -34,7 +34,7 @@
             <!-- Post 1 -->
             <div class="full">
                 <div class="photo">
-                    <img src="/Pictures/expe.PNG" alt="site" id="mi">
+                    <img src=".\Pictures\expe.PNG" alt="site" id="mi">
                 </div>
                 <div class="side">
                     <p id="title">Mastering Public Speaking</p>
@@ -49,7 +49,7 @@
             <!-- Post 2 -->
             <div class="full">
                 <div class="photo">
-                    <img src="/Pictures/expe.PNG" alt="site" id="mi">
+                    <img src=".\Pictures\expe.PNG" alt="site" id="mi">
                 </div>
                 <div class="side">
                     <p id="title">Building Confidence: Public Speaking for Students</p>
@@ -64,7 +64,7 @@
             <!-- Post 3 -->
             <div class="full">
                 <div class="photo">
-                    <img src="/Pictures/good.PNG" alt="site" id="mi">
+                    <img src=".\Pictures\good.PNG" alt="site" id="mi">
                 </div>
                 <div class="side">
                     <p id="title">How to Be a Good Listener?</p>
@@ -89,9 +89,9 @@
             </div>
             <h1 id="a">ASYV Debate Blog</h1>
             <div class="um">
-                <img src="/Pictures/facebook.png" alt="site" id="site">
-                <img src="/Pictures/instagram.png" alt="site" id="site">
-                <img src="/Pictures/twitter.png" alt="site" id="site">
+                <img src=".\Pictures\facebook.png" alt="site" id="site">
+                <img src=".\Pictures\instagram.png" alt="site" id="site">
+                <img src=".\Pictures\twitter.png" alt="site" id="site">
             </div>
             <p id="as">asyvdebate@asyv.org</p>
         </div>
