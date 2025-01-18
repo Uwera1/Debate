@@ -264,7 +264,6 @@ width: 100%;
 #title {
     font-size: 2rem;
     color: #333;
-   /* font-family: 'Times New Roman', Times, serif;*/
 }
 
 
@@ -333,7 +332,6 @@ span:hover {
     margin-left: 70%;
 }
 #a{
-   /* font-family: 'Times New Roman', Times, serif;*/
     margin-top: -14.5%;
     margin-left: 70%;
 }
@@ -341,15 +339,11 @@ span:hover {
     font-size: 1.4rem;
     margin-left: -80%;
     color: white;
-    /* font-family: 'Times New Roman', Times, serif; */
 }
 
 .subscription-container {
-    /* background: #333; */
     height: 10rem;
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
     text-align: center;
-    
     max-width: 100%;
     margin-top: 30px;
 }
@@ -399,12 +393,6 @@ span:hover {
     color: green;
     display: none;
 }
-
-
-
-
-
-/* Styling for the .after section */
 .after {
     display: grid;
     grid-template-columns: 1fr 1fr; /* Two columns for side-by-side images */
@@ -412,8 +400,6 @@ span:hover {
     justify-items: center; /* Center images within each column */
     margin-bottom: 20px; /* Space below the .after section */
 }
-
-/* Styling for the #se image */
 #se {
     display: block;
     width: 20%;
@@ -422,18 +408,12 @@ span:hover {
     margin-top: 12%;
     margin-left:7% ;
 }
-
-
-
-/* Styling for the .final section */
 .final {
     display: grid;
-    justify-items: center; /* Center the image horizontally */
+    justify-items: center; 
 }
-
-/* Styling for all images */
 img {
-    max-width: 100%; /* Ensure images are responsive */
+    max-width: 100%; 
     height: auto; /* Maintain aspect ratio */
     border-radius: 10px; /* Optional: rounded corners */
 }
@@ -508,32 +488,20 @@ img {
     }
  
 }
-/*.general {
-    background-image: url('/Pictures/king.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 600px;
-    width: 100%;
-    margin-top: -7.2%;
-}*/
-/* For background image cycling */
+
 .general {
-    background-image: url('picone.jpg'); /* Path to your image */
-    background-size: cover; /* Ensures the image covers the entire container */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    height: 90vh; /* Sets the height to full viewport height */
-    width: 100%; /* Sets the width to full container width */
-    margin-top: 0%; /* Adjusts vertical alignment if necessary */
-    display: flex; /* Optional: to align content inside */
-    align-items: center; /* Centers content vertically */
-    justify-content: center; /* Centers content horizontally */
-    position: relative; /* Allows positioning of child elements */
+    background-image: url('picone.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    height: 90vh; 
+    width: 100%;
+    margin-top: 0%;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    position: relative; 
 }
-
-
-/* Word Container (To contain individual letters) */
 .word {
     position: relative;
     font-family: 'Times New Roman', Times, serif;
