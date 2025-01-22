@@ -120,7 +120,7 @@ main {
    
     font-size: 1.6rem;
 
-    margin-top: -40%;
+    margin-top: -32%;
 }
 #ua{
     margin-left: 10%;
@@ -144,7 +144,7 @@ font-size: 1.3rem;
 #sion{
     font-weight: bold;
     font-size: 1.6rem;
-    margin-top: 10%;
+    margin-top: 14%;
     color: black;
 text-align: left;
 width: 100%;
@@ -152,7 +152,7 @@ width: 100%;
  
 }
 #yva{
-    margin-top: 15%;
+    margin-top: 18%;
     margin-left: -30%;
     font-size: 1.3rem;
     text-align: center;
@@ -418,7 +418,7 @@ span:hover {
     width: 20%;
     height: 10%;
     margin-right: 4%;
-    margin-top: 12%;
+    margin-top: 17%;
     margin-left:7% ;
 }
 .final {
@@ -441,9 +441,8 @@ img {
 
 #su{
     margin-left: -60%;
-    /* width: 3rem; */
     height: 15rem;
-    margin-top:-20%;
+    margin-top:-25%;
 }
 
 @media (max-width: 600px) {

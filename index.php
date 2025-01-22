@@ -226,41 +226,66 @@ mysqli_close($conn);
     <p id="le">Explore more about thunderbirds achivements</p>
     <hr id="ir">
     <div class="follow">
+    <?php
+// Database connection
+$conn = mysqli_connect("localhost", "root", "", "debate");
+
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+// Query to fetch the latest 3 entries
+$query = "SELECT * FROM information ORDER BY id DESC LIMIT 3";
+$result = mysqli_query($conn, $query);
+
+if (mysqli_num_rows($result) > 0):
+    while ($row = mysqli_fetch_assoc($result)):
+        // Extract data from each row
+        $imageSrc = $row['picture'];
+        $title = $row['title'];
+        $description = $row['detail'];
+
+        // Truncate the description for preview and separate the rest
+        $truncatedDescription = substr($description, 0, 50); // Adjust length as needed
+        $remainingDescription = substr($description, 50);
+?>
         <div class="full">
-            <img src=".\Pictures\mike.PNG" alt="source" id="mi">
-            <p id="title">Mastering public speaking</p>
-            <p id="small-detail1" class="small-detail">Public speaking can be daunting, but</p>
-            <p id="full-detail1" class="full-detail" style="display: none;">
-                With practice and the right techniques, it can be mastered effectively. This involves improving confidence, voice modulation, and audience engagement.
+            <img src="<?php echo htmlspecialchars($imageSrc); ?>" alt="source" id="mi">
+            <p id="title"><?php echo htmlspecialchars($title); ?></p>
+            <p class="small-detail">
+                <?php echo htmlspecialchars($truncatedDescription); ?>
             </p>
-            <span onclick="toggleDetails('full-detail1', this)">...</span>
+            <p id="full-detail-<?php echo $row['id']; ?>" class="full-detail" style="display: none;">
+                <?php echo htmlspecialchars($remainingDescription); ?>
+            </p>
+            <span onclick="toggleDetails('full-detail-<?php echo $row['id']; ?>', this)">...</span>
             <hr id="line">
         </div>
-        
-        <!-- Section 2 -->
-        <div class="full">
-            <img src=".\Pictures\mike.PNG" alt="source" id="mi">
-            <p id="title">Improving communication</p>
-            <p id="small-detail2" class="small-detail">Effective communication starts with</p>
-            <p id="full-detail2" class="full-detail" style="display: none;">
-                Understanding your audience, structuring your speech clearly, and practicing delivery techniques to ensure your message is impactful.
-            </p>
-            <span onclick="toggleDetails('full-detail2', this)">...</span>
-            <hr id="line">
-        </div>
-        
-        <!-- Section 3 -->
-        <div class="full">
-            <img src=".\Pictures\mike.PNG" alt="source" id="mi">
-            <p id="title">Overcoming stage fear</p>
-            <p id="small-detail3" class="small-detail">Stage fear can be reduced by</p>
-            <p id="full-detail3" class="full-detail" style="display: none;">
-                Visualizing success, breathing exercises, and gradual exposure to speaking situations to build confidence.
-            </p>
-            <span onclick="toggleDetails('full-detail3', this)">...</span>
-            <hr id="line">
-        </div>
-    </div>
+<?php
+    endwhile;
+else:
+    echo "<p>No content available.</p>";
+endif;
+
+// Close connection
+mysqli_close($conn);
+?>
+
+<script>
+    // Toggle visibility of full details
+    function toggleDetails(id, element) {
+        const fullDetail = document.getElementById(id);
+        if (fullDetail.style.display === 'none' || fullDetail.style.display === '') {
+            fullDetail.style.display = 'block';
+            element.textContent = ' Show Less';
+        } else {
+            fullDetail.style.display = 'none';
+            element.textContent = '...';
+        }
+    }
+</script>
+
 </div>
 <div class="footer">
     <p id="blog">Subscribe to Our blog</p>
