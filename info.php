@@ -11,33 +11,37 @@ include 'db_connection.php';
     <link href="register.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-    <main>
+<main>
+        <!-- Left Sidebar -->
         <div class="left">
-           
-            <div class="down">
-                <a href="register.php"><button class="joinBtn">Add lessons</button><a>
-                <a href="event.php"><button class="joinBtn">Add event</button><a>
-                <a href="info.php"><button class="joinBtn">Add information</button><a>
-
-                <a href="admin.php"><button class="joinBtn">Logout</button><a>  
+            <div class="img">
+                <img id="id" src="./Pictures/dream.jpg" alt="Admin">
+                <p id="p">ADMIN</p>
             </div>
-        
-           </div>
-          
-           <form action="info.php" method="POST" id="form" enctype="multipart/form-data">
-            <label id="la" for="avatar">Choose a profile picture:</label>
-            <input type="file" id="avatar" name="avatar" required />
-            
-            <label id="t" for="text">Title:</label><br>
-            <input type="text" id="text" name="Title" size="70" required /><br>
-            
-            <label id="d" for="text">Description:</label><br>
-            <input type="text" id="text" name="details" size="500" required /><br>
-            
-            <input id="reg" type="submit" name="submit" value="Add Post" class="sub">
-        </form>
+            <div class="down">
+                <a href="register.php"><button class="joinBtn">Add Lessons</button></a>
+                <a href="event.php"><button class="joinBtn">Add Event</button></a>
+                <a href="info.php"><button class="joinBtn">Add Information</button></a>
+                <a href="admin.php"><button class="logout">Logout</button></a>
+            </div>
+        </div>
 
-
+        <!-- Form Section -->
+        <div class="form-container">
+            <form action="info.php" method="POST" id="form" enctype="multipart/form-data">
+                <h2>Add New information</h2>
+                <label for="avatar">Choose  Picture:</label>
+                <input type="file" id="avatar" name="avatar" required />
+                
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="Title" placeholder="Enter post title..." required />
+                
+                <label for="description">Description:</label>
+                <textarea id="description" name="details" rows="5" placeholder="Enter post description..." required></textarea>
+                
+                <button type="submit" name="submit" class="submit-btn">Add Post</button>
+            </form>
+        </div>
     </main>
   
 </body>

@@ -108,7 +108,7 @@ function toggleContent(button) {
 mysqli_close($conn);
 ?>
 
-
+</main>
         <div class="footer">
             <p id="blog">Subscribe to Our Blog</p>
             <div class="subscription-container">
@@ -127,7 +127,6 @@ mysqli_close($conn);
             </div>
             <p id="as">asyvdebate@asyv.org</p>
         </div>
-    </main>
     <script>
         function toggleContent(element) {
             const hiddenContent = element.previousElementSibling;

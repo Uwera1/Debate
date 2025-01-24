@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
@@ -14,7 +14,7 @@ header {
     background-color: #333;
     color: white;
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     padding: 10px 0;
     z-index: 1000;
 }
@@ -41,16 +41,12 @@ header {
     .event-item {
         width: 100%;
     }
-
- 
-
- 
 }
 nav {
     display: flex;
     align-items: center;
-    justify-content: center; 
-    width: 100%; 
+    justify-content: center;
+    width: 100%;
 }
 
 nav h1 {
@@ -61,59 +57,61 @@ nav h1 {
     left: 20px;
 }
 
-
 nav ul {
     list-style: none;
-    display: flex; 
-    justify-content: center; 
+    display: flex;
+    justify-content: center;
     gap: 30px;
-  margin-left: 30%;
+    margin-left: 30%;
     padding: 0;
-    width: 100%; 
+    width: 100%;
 }
 
 nav ul li {
-    display: inline-block; 
+    display: inline-block;
 }
 
 nav ul li a {
     text-decoration: none;
     color: white;
     font-size: 1.2rem;
-    
     transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #f1c40f; 
+    color: #f1c40f;
 }
 main {
-    padding-top: 100px;
-    margin-top: 4%;
+    margin-top:10%;
+    margin-left: 3%;
+    width: 96%;
+    height: 117vh;
+    background-color: #e8eaed;
+    border-radius: 5%;
+    margin-bottom: 3%;
 }
 li a {
     text-decoration: none;
     color: white;
 }
-#p{
+#p {
     margin-left: 35%;
     color: black;
     font-size: 1.3rem;
-  
     font-weight: lighter;
 }
-.follow{
+.follow {
     display: flex;
     margin-left: 30%;
     flex-direction: column;
     justify-content: space-around;
     flex-wrap: wrap;
 }
-#im{
+#im {
     width: 4rem;
     height: 4rem;
 }
-.full{
+.full {
     width: 60%;
     padding: 20px;
     display: flex;
@@ -121,14 +119,14 @@ li a {
     align-items: stretch;
 }
 .photo {
-    flex: 1; 
+    flex: 1;
     display: flex;
-    justify-content: center; 
+    justify-content: center;
 }
 .photo img {
-    display: block; 
-}   
-.side{
+    display: block;
+}
+.side {
     display: flex;
     flex-direction: column;
 }
@@ -145,9 +143,7 @@ li a {
 #detail {
     font-size: 1.2rem;
     color: #666;
-    margin-left: 3%;
-    
-
+    margin-left: 2%;
 }
 .footer {
     background-color: #333;
@@ -172,9 +168,7 @@ li a {
     margin-top: 10px;
     margin-left: 70%;
 }
-
-#a{
-   
+#a {
     margin-top: -14.5%;
     margin-left: 70%;
 }
@@ -182,28 +176,24 @@ li a {
     font-size: 1.4rem;
     margin-left: -80%;
     color: white;
-
 }
 .post-img {
     width: 300px;
     height: 200px;
     object-fit: cover;
 }
-
 .subscription-container {
     height: 10rem;
-    text-align: center; 
+    text-align: center;
     max-width: 100%;
     margin-top: 30px;
 }
-
 .subscription-container form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 10px;
 }
-
 .subscription-container input[type="email"] {
     width: 25%;
     padding: 10px;
@@ -230,15 +220,12 @@ li a {
     cursor: pointer;
     font-family: 'Times New Roman', Times, serif;
 }
-
 .subscription-container button:hover {
     background-color: #555;
 }
-
 .success-message {
     margin-top: 20px;
     font-size: 1rem;
     color: green;
     display: none;
 }
-
