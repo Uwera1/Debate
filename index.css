@@ -124,18 +124,16 @@ main {
 }
 #ua{
     margin-left: 10%;
-  /*  font-family: 'Times New Roman', Times, serif;*/
-margin-top: 3%;
-width: 80%;
-text-align: center;
-font-size: 1.3rem;
+    margin-top: 3%;
+    width: 80%;
+    text-align: center;
+    font-size: 1.3rem;
 
 }
 #vi{
     font-weight: bold;
      font-size: 1.6rem;
-    
-    margin-top: -52%;
+      margin-top: -52%;
     
 }
 .mubye{
@@ -146,9 +144,9 @@ font-size: 1.3rem;
     font-size: 1.6rem;
     margin-top: 14%;
     color: black;
-text-align: left;
-width: 100%;
-   margin-left: 50%;
+    text-align: left;
+    width: 100%;
+    margin-left: 50%;
  
 }
 #yva{
@@ -250,6 +248,7 @@ width: 100%;
 .foot {
     background-color: rgb(234, 233, 230);
     padding: 40px 0;
+    height: 70vh;
     text-align: center;
 }
 
@@ -292,17 +291,17 @@ span:hover {
 
 
 #mi {
-      width: 100%; /* Makes the images take the full width of the container */
-      height: 200px; /* Sets a fixed height for all images */
-      object-fit: cover; /* Ensures the image fills the container without distorting */
-      display: block; /* Ensures images are not treated as inline elements */
+      width: 100%; 
+      height: 200px;
+      object-fit: cover;
+      display: block; 
 }
-/* Ensure all images have the same size */
+
 .follow .full .photo img {
-    width: 100%; /* Makes the images take the full width of the container */
-    height: 200px; /* Sets a fixed height for all images */
-    object-fit: cover; /* Ensures the image fills the container without distorting */
-    display: block; /* Ensures images are not treated as inline elements */
+    width: 100%;
+    height: 200px; 
+    object-fit: cover; 
+    display: block; 
 }
 
 #ir{
@@ -319,11 +318,12 @@ span:hover {
     color: #333;
 }
 .footer {
-    background-color: #333;
+    /* background-color: #333; */
     color: white;
     padding: 40px 20px;
     text-align: center;
-    height: 200px;
+    height: 35vh;
+    background-color: #333;
 }
 
 .um {

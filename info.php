@@ -1,10 +1,6 @@
 <?php
-    session_start();
-    $conn=mysqli_connect("localhost","root","","debate");
-    if(!isset($_SESSION['email'])){
-        header('location: admin.php');
-    }
-
+// Include the database connection
+include 'db_connection.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,18 +24,18 @@
         
            </div>
           
-           <form action="db_connection.php" method="POST" id="form" enctype="multipart/form-data">
-    <label id="la" for="avatar">Choose a profile picture:</label>
-    <input type="file" id="avatar" name="avatar" required />
-    
-    <label id="t" for="text">Title:</label><br>
-    <input type="text" id="text" name="Title" size="70" required /><br>
-    
-    <label id="d" for="text">Description:</label><br>
-    <input type="text" id="text" name="details" size="500" required /><br>
-    
-    <input id="reg" type="submit" name="submit" value="Add Post" class="sub">
-</form>
+           <form action="info.php" method="POST" id="form" enctype="multipart/form-data">
+            <label id="la" for="avatar">Choose a profile picture:</label>
+            <input type="file" id="avatar" name="avatar" required />
+            
+            <label id="t" for="text">Title:</label><br>
+            <input type="text" id="text" name="Title" size="70" required /><br>
+            
+            <label id="d" for="text">Description:</label><br>
+            <input type="text" id="text" name="details" size="500" required /><br>
+            
+            <input id="reg" type="submit" name="submit" value="Add Post" class="sub">
+        </form>
 
 
     </main>
