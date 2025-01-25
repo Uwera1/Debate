@@ -247,7 +247,7 @@ main {
 
 .foot {
     background-color: rgb(234, 233, 230);
-    padding: 40px 0;
+    /* padding: 40px 0; */
     /* height: 30vh; */
     text-align: center;
 }
@@ -322,7 +322,7 @@ span:hover {
     color: white;
     padding: 40px 20px;
     text-align: center;
-    height: 35vh;
+    height: 30vh;
     background-color: #333;
 }
 
