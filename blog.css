@@ -82,23 +82,22 @@ nav ul li a:hover {
     color: #f1c40f;
 }
 main {
-    margin-top:10%;
-    margin-left: 3%;
-    width: 96%;
-    height: 117vh;
-    background-color: #e8eaed;
-    border-radius: 5%;
-    margin-bottom: 3%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 li a {
     text-decoration: none;
     color: white;
 }
-#p {
-    margin-left: 35%;
-    color: black;
-    font-size: 1.3rem;
-    font-weight: lighter;
+
+main #p {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
 }
 .follow {
     display: flex;
@@ -112,23 +111,28 @@ li a {
     height: 4rem;
 }
 .full {
-    width: 60%;
-    padding: 20px;
     display: flex;
-    margin-left: -10%;
-    align-items: stretch;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 20px;
 }
+
+.full:last-child {
+    border-bottom: none;
+}
+
 .photo {
-    flex: 1;
-    display: flex;
-    justify-content: center;
+    margin-right: 15px;
 }
 .photo img {
-    display: block;
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    object-fit: cover;
+
 }
 .side {
-    display: flex;
-    flex-direction: column;
+    flex: 1;
 }
 
 #title {
