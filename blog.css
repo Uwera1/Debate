@@ -81,24 +81,46 @@ nav ul li a {
 nav ul li a:hover {
     color: #f1c40f;
 }
-main {
+/* main {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+} */
+main {
+    max-width: 1000px;
+    margin-top: 95px;  /* Adjust top margin as needed */
+    margin-bottom: 20px; /* Adjust bottom margin for spacing */
+    margin-left: auto; /* Centers the element */
+    margin-right: auto; /* Centers the element */
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
 li a {
     text-decoration: none;
     color: white;
 }
 
-main #p {
+/* main #p {
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 20px;
+} */
+main #p {
+    font-size: 40px; /* Slightly reduced for better readability on all screens */
+    font-weight: 600;
+    margin-left: 10%;
+    color: #333; /* Darker color for better contrast */
+    line-height: 1.6; /* Improved line spacing */
+    margin-bottom: 20px;
+    text-align: justify; /* Aligns text for a clean look */
 }
+
 .follow {
     display: flex;
     margin-left: 30%;
@@ -123,10 +145,11 @@ main #p {
 
 .photo {
     margin-right: 15px;
+    margin-left: -25%;
 }
 .photo img {
-    width: 100px;
-    height: 100px;
+    width: 240px;
+    height: 200px;
     border-radius: 10px;
     object-fit: cover;
 
@@ -137,30 +160,55 @@ main #p {
 
 #title {
     font-size: 2rem;
-    color: #333;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+    /* color: #333;
+        font-size: 20px;
     text-align: left;
     width: 42rem;
     margin-top: -2%;
-    margin-left: 3%;
+    margin-left: 3%; */
 }
 
 #detail {
-    font-size: 1.2rem;
+    /* font-size: 1.2rem;
     color: #666;
-    margin-left: 2%;
+    margin-left: 2%; */
+    font-size: 14px;
+    line-height: 1.6;
 }
-.footer {
+.toggle-button {
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: 600;
+}
+/* .footer {
     background-color: #333;
     color: white;
     padding: 40px 20px;
     text-align: center;
     height: 200px;
+} */
+.footer {
+    height: 200px;
+    text-align: center;
+    background-color: #333;
+    padding: 40px 20px;
+    margin-top: 20px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
-.um {
+ .um {
     display: flex;
     gap: 20px;
     justify-content: center;
     margin-left: 70%;
+} 
+.footer .um img {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
 }
 #site {
     width: 2rem;
@@ -186,12 +234,12 @@ main #p {
     height: 200px;
     object-fit: cover;
 }
-.subscription-container {
+ .subscription-container {
     height: 10rem;
     text-align: center;
     max-width: 100%;
     margin-top: 30px;
-}
+} 
 .subscription-container form {
     display: flex;
     flex-direction: column;
@@ -204,14 +252,14 @@ main #p {
     margin-left: 3%;
     border: 1px solid #ccc;
     border-radius: 5px;
-}
+} 
 .subscription-container input[type="name"] {
     width: 25%;
     padding: 10px;
     margin-left: 3%;
     border: 1px solid #ccc;
     border-radius: 5px;
-}
+} 
 .subscription-container button {
     padding: 10px 20px;
     background-color: gray;
@@ -226,7 +274,8 @@ main #p {
 }
 .subscription-container button:hover {
     background-color: #555;
-}
+} 
+ 
 .success-message {
     margin-top: 20px;
     font-size: 1rem;

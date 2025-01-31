@@ -81,7 +81,6 @@ if (!$result) {
                     <span class="hidden-content"><?php echo substr($description, 150); ?></span> <!-- Show the rest when toggled -->
                     <span class="toggle-button" onclick="toggleContent(this)"> more</span>
                 </p>
-                <!-- <hr id="line"> -->
             </div>
         </div>
     <?php

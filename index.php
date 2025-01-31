@@ -91,6 +91,9 @@ require 'vendor/autoload.php'; // Include PHPMailer autoloader
             <h1>ThunderBirds Blog</h1>
             <ul>
                 <li><a href="index.php">Home</a></li>
+                <li><a href="#us">About us</a></li>
+                <li><a href="#vi">Our vision</a></li>
+                <li><a href="#yva">Our mission</a></li>
                 <li><a href="blog.php">Learn</a></li>
             </ul>
         </nav>
@@ -104,25 +107,32 @@ require 'vendor/autoload.php'; // Include PHPMailer autoloader
             </div>
         </div>
         <div class="main">
-            <div>
-                <img src=".\Pictures\linet.jpg" alt="site" id="am">
-                <p id="us">About us</p>
-                <p id="ua">ASYV ThunderBirds is a club 
-                    founded by Frank Ntambara, who recognized 
-                    the importance of equipping the younger generation 
-                    with essential public speaking skills.
-                     The club aims to provide a platform for
-                      young people to develop their communication abilities and 
-                    explore new opportunities for personal and professional growth
-                </p>
-            </div>
-            <div class="mubye">
-                <img src=".\Pictures\competi.jpg" alt="site" id="ak">
-                <p id="vi">Our vision</p>
-                <p  id="vision">Through public speaking facilitation, we aspire to a society where everyone can express themselves fluently and 
-                    confidently, without difficulty or hesitation
-                </p>
-            </div>
+     <div class="about-container">
+    <div class="about-text">
+        <p id="us">About us</p>
+        <p id="ua">ASYV ThunderBirds is a club 
+            founded by Frank Ntambara, who recognized 
+            the importance of equipping the younger generation 
+            with essential public speaking skills.
+            The club aims to provide a platform for
+            young people to develop their communication abilities and 
+            explore new opportunities for personal and professional growth.
+        </p>
+    </div>
+    <img src=".\Pictures\linet.jpg" alt="site" id="am">
+</div>
+
+
+
+<div class="mubye">
+    <img src=".\Pictures\competi.jpg" alt="site" id="ak">
+    <p id="vi">Our vision</p>
+    <p id="vision">Through public speaking facilitation, we aspire to a society where everyone can express themselves fluently and 
+        confidently, without difficulty or hesitation
+    </p>
+</div>
+
+
             
         </div>
        
@@ -413,6 +423,16 @@ mysqli_close($conn);
             spanElement.textContent = "..."; // Change 'less' back to ellipsis
         }
     }
+
+    // Smooth scrolling script
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function(event) {
+            event.preventDefault();
+            document.querySelector(this.getAttribute("href")).scrollIntoView({
+                behavior: "smooth"
+            });
+        });
+    });
 </script>
 
 <script src="index.js"></script> 
