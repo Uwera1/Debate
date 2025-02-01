@@ -38,7 +38,7 @@ a {
     border: 1px solid #dadce0;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 460px;
+    width: 560px;
     padding: 40px;
     display: flex;
     flex-direction: column;
@@ -54,7 +54,7 @@ h2 {
 
 .form-value input[type="email"],
 .form-value input[type="password"] {
-    width: 100%;
+    width: 20rem;
     padding: 14px;
     margin: 10px 0;
     border: 1px solid #dadce0;
@@ -97,16 +97,24 @@ h2 {
 }
 
 button {
-    width: 100%;
+    width: 50%;
     padding: 12px;
-    background-color: #1a73e8;
-    color: #fff;
+    background-color: #1a73e8;  /* Example button color */
+    color: white;
     border: none;
+    margin-left: 70px;
+    margin-top: 2%;
     border-radius: 4px;
     font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
     transition: background-color 0.3s ease;
+}
+.form-value input[type="email"]:focus,
+.form-value input[type="password"]:focus {
+    border: 1px solid #1a73e8;  /* Same color as the button */
+    outline: none;  /* Removes the default browser outline */
+    box-shadow: 0 0 5px rgba(26, 115, 232, 0.5);  /* Optional: adds a soft glow effect */
 }
 
 button:hover {
