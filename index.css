@@ -4,6 +4,7 @@
 }
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 70px;
 }
 
 body {
@@ -35,7 +36,6 @@ nav h1 {
     font-size: 2rem;
     color: white;
     margin-left: 8%;
-  /*  font-family: 'Times New Roman', Times, serif;*/
     position: absolute;
     left: 20px;
 }
@@ -58,7 +58,6 @@ nav ul li a {
     text-decoration: none;
     color: white;
     font-size: 1.2rem;
-    /*font-family: 'Times New Roman', Times, serif;*/
     transition: color 0.3s ease;
 }
 
@@ -91,48 +90,21 @@ main {
     position: relative;
 }
 
-
-/* #ak {
-    width: 70%;
-    height: 45%;
-    margin-top: 80%;
-    margin-left: -40rem;
-    grid-area: center;
-    justify-self: center;
-} */
-/*#am{
-    grid-area: left;
-    width: 50%;
-    height: 40%;
-    margin-top: 120px;
-    margin-left: 49rem;
-    font-size: 2rem;
-    font-family: 'Times New Roman', Times, serif;}*/
-
 #event{
     grid-area: left;
     margin-top: 6rem;
     text-align: center;
-    /* margin-left: 40rem; */
     font-size: 2rem;
-  /*  font-family: 'Times New Roman', Times, serif;*/
 }
-/* #us{
-    margin-left: 40%;
-    font-weight: bold;
-   
-    font-size: 1.6rem;
-height: fit-content;
-    margin-top: -32%;
-} */
+
 #us {
     position: relative;
-    margin-top: -18%;  /* Replacing margin-top with position */
+    margin-top: -18%;  
     margin-left: 40%;
     font-weight: bold;
     font-size: 1.6rem;
     height: fit-content;
-    padding-top: 80px; /* Ensures visibility when scrolling */
+    padding-top: 80px; 
 }
 :target {
     scroll-margin-top: 120px; /* Adjust based on navbar height */
@@ -144,81 +116,49 @@ height: fit-content;
     margin-top: 0%;
     width: 40rem;
     text-align: center;
-    font-size: 1.3rem;
+    font-size: 1rem;
 
 }
-/* Container for Our Vision (using Flexbox) */
-/* Container for Our Vision (using Flexbox) */
-/* Container for Our Vision (using Flexbox) */
 .mubye {
-    display: flex; /* Use flexbox for side-by-side layout */
-    justify-content: flex-start; /* Align the image and text to the left */
-    align-items: flex-start; /* Ensure both are aligned at the top */
-    gap: 30px; /* Space between image and text */
-    margin-top: 60%; /* Set top margin to 30% of the container's height */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 30px;
     padding: 20px;
+    margin-top: 55%;
+    width: 80%; 
     margin-left: -90%;
-    width: 100%; /* Ensure full width for layout */
-}
-
-/* Image Styling (Smaller and on the Left) */
+    margin-left: auto; 
+    margin-left: -90%;}
 #ak {
-    width: 50%; /* Reduce image size */
+    width: 60%; /* Reduce image size */
     height: auto; /* Maintain aspect ratio */
     font-size: 2rem;
+    margin-top: 5%;
     font-family: 'Times New Roman', Times, serif;
     border-radius: 10px; /* Optional: Adds rounded corners */
 }
 
-/* Text Section Styling */
 #vi {
-    font-size: 1.6rem; /* Make the "Our Vision" title bigger */
+    font-size: 1.6rem; 
     font-weight: bold;
-    width:40%;
-    margin-top: 0; /* Remove top margin to align the text with the image */
+    width:100%;
+    text-align: center;
+    margin-left: 5%;
+    color: black;
+    margin-top: 2%; /* Remove top margin to align the text with the image */
 }
 
 #vision {
-    font-size: 1.2rem;
-    text-align: justify;
-    width: 55%; /* Ensures text and image are balanced */
-}
-
-
-/* #vi{
-    font-weight: bold;
-     font-size: 1.6rem;
-      margin-top: -52%;
     
+        margin-left: 10%;
+        margin-top: 0%;
+        width: 40rem;
+        text-align: center;
+        font-size: 1rem;    
+  
 }
-.mubye{
-    margin-top: 8%;
-} */
-#sion{
-    font-weight: bold;
-    font-size: 1.6rem;
-    margin-top: 14%;
-    color: black;
-    text-align: left;
-    width: 100%;
-    margin-left: 50%;
- 
-}
-#yva{
-    margin-top: 18%;
-    margin-left: -30%;
-    font-size: 1.3rem;
-    text-align: center;
- 
-}
-/* #vision{
-    margin-top: 2%;
-    margin-left: -14rem;
- 
-    width: 90%;
-    text-align: center;
-    font-size: 1.3rem;
-} */
+
 .word {
     text-align: center;
     
@@ -227,16 +167,46 @@ height: fit-content;
     width: 4rem;
     height: 4rem;
 }
-
-
-.after{
-    display: flex;
-    flex-direction: row;
-    gap: 70%;
-}
-
 .mission{
     display: flex;
+    justify-content: space-between; /* Distribute content horizontally */
+   align-items: flex-start; /* Align items at the top */
+     gap: 30px; /* Space between the image and text */
+     padding: 20px;
+   margin-top: 5%;
+}
+
+#su{
+    margin-left: -70%;
+    height: 15rem;
+    margin-top:-22%;
+}
+#sion{
+    font-weight: bold;
+    font-size: 1.6rem;
+    color: black;
+    text-align: left;
+    width: 100%;
+    margin-top: 5%;
+    padding-top: 2%;
+    margin-left: 40%;
+ 
+}
+#se {
+    display: block;
+    width: 30%;
+    height: 10%;
+    margin-right: 2%;
+    margin-top: 8%;
+    margin-left:1% ;
+}
+#yva{
+    margin-left: -30%;
+    font-size: 1rem;
+    text-align: center;
+    padding-top: 4%;
+    margin-top: 6%;
+ 
 }
 .event {
     width: 80%;
@@ -250,7 +220,6 @@ height: fit-content;
     font-family: Arial, sans-serif;
 }
 
-/* Flexbox to align events horizontally */
 .events {
     display: flex;
     justify-content: space-around; /* Space items evenly */
@@ -461,21 +430,8 @@ span:hover {
     color: green;
     display: none;
 }
-.after {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns for side-by-side images */
-    gap: 20px; /* Spacing between images */
-    justify-items: center; /* Center images within each column */
-    margin-bottom: 20px; /* Space below the .after section */
-}
-#se {
-    display: block;
-    width: 20%;
-    height: 10%;
-    margin-right: 4%;
-    margin-top: 17%;
-    margin-left:7% ;
-}
+
+
 .final {
     display: grid;
     justify-items: center; 
@@ -494,11 +450,6 @@ img {
     margin-top: -20%;
 }
 
-#su{
-    margin-left: -60%;
-    height: 15rem;
-    margin-top:-25%;
-}
 
 @media (max-width: 600px) {
     nav ul {

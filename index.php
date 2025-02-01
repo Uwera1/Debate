@@ -92,7 +92,7 @@ require 'vendor/autoload.php'; // Include PHPMailer autoloader
             <ul>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="#us">About us</a></li>
-                <li><a href="#vi">Our vision</a></li>
+                <li><a href="#our-vision">Our Vision</a></li>
                 <li><a href="#yva">Our mission</a></li>
                 <li><a href="blog.php">Learn</a></li>
             </ul>
@@ -123,29 +123,17 @@ require 'vendor/autoload.php'; // Include PHPMailer autoloader
 </div>
 
 
-
-<div class="mubye">
-    <img src=".\Pictures\competi.jpg" alt="site" id="ak">
-    <p id="vi">Our vision</p>
-    <p id="vision">Through public speaking facilitation, we aspire to a society where everyone can express themselves fluently and 
-        confidently, without difficulty or hesitation
-    </p>
+<div class="mubye" id="our-vision">
+    <img src="./Pictures/competi.jpg" alt="site" id="ak">
+    <div>
+        <p id="vi">Our Vision</p>
+        <p id="vision">Through public speaking facilitation, we aspire to a society where everyone can express themselves fluently and  
+            confidently, without difficulty or hesitation.
+        </p>
+    </div>
 </div>
-
-
-            
-        </div>
-       
-       <div class="after">
-        <div>
-           <!---<img src="/Pictures/power4.PNG" alt="site" id="then">----> 
-           </div>
-           <div>
-           <!----<img src="/Pictures/power3.PNG" alt="site" id="ask">---> 
-           </div>
-            
-       </div>
-       <div class="mission">
+ </div> </div>
+  <div class="mission">
         <p id="sion">Our mission</p>
         <p id="yva">Our mission is to empower the younger generation 
             by providing them with the tools and opportunities to
