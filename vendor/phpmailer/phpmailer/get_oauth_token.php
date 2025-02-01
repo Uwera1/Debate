@@ -76,6 +76,8 @@ if (!isset($_GET['code']) && !isset($_POST['provider'])) {
 }
 
 require 'vendor/autoload.php';
+require_once 'class-db.php';
+
 
 session_start();
 
