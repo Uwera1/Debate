@@ -399,7 +399,7 @@ span:hover {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-.subscription-container input[type="name"] {
+.subscription-container input[type="text"] {
     width: 25%;
     padding: 10px;
     margin-left: 3%;

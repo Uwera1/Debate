@@ -22,6 +22,7 @@ include 'db_connection.php';
                 <a href="register.php"><button class="joinBtn">Add Lessons</button></a>
                 <a href="event.php"><button class="joinBtn">Add Event</button></a>
                 <a href="info.php"><button class="joinBtn">Add Information</button></a>
+                <a href="message.php"><button class="joinBtn">Add message</button></a>
                 <a href="admin.php"><button class="logout">Logout</button></a>
             </div>
         </div>

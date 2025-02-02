@@ -26,10 +26,10 @@
 
         <!-- Form Section -->
         <div class="form-container">
-            <form action="connection.php" method="POST" id="form" enctype="multipart/form-data">
+            <form action="sendmessage.php" method="POST" id="form" enctype="multipart/form-data">
                 <h2>Add Post</h2>
-                <label for="avatar">Choose  Picture:</label>
-                <input type="file" id="avatar" name="avatar" required />
+                <!-----<label for="avatar">Picture:</label>
+                <input type="file" id="avatar" name="avatar"required />----->
                 
                 <label for="title">Title:</label>
                 <input type="text" id="title" name="Title" placeholder="Enter post title..." required />

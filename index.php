@@ -294,95 +294,18 @@ mysqli_close($conn);
             <button type="submit">Subscribe</button>
         </form>
         <p class="success-message" id="success-message">Thank you for subscribing!</p>--->  
-    <form id="subscription-form" action="index.php" method="POST">
-        <?php
-        $userEmail = '';
-        $nameOfUser = '';
-
-        // if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        //     $nameOfUser = $_POST['name'];
-        //     $userEmail = $_POST['email'];
-        
-        //     // Validate input (basic validation)
-        //     if (!empty($nameOfUser) && !empty($userEmail)) {
-        //         // Insert data into the table
-        //         $stmt = $conn->prepare("INSERT INTO subscribers (full_name, email) VALUES (?, ?)");
-        //         $stmt->bind_param("ss", $nameOfUser, $userEmail);
-        
-        //         if ($stmt->execute()) {
-        //             echo "Data inserted successfully!";
-        //         } else {
-        //             echo "Error: " . $stmt->error;
-        //         }
-        
-        //         // Close the statement
-        //         $stmt->close();
-        //     } else {
-        //         echo "Please fill in all fields.";
-        //     }
-        // }
-        if (isset($_POST['subscribe'])){
-            $userEmail = $_POST['email'];
-            $nameOfUser = $_POST['name'];
-
-            // $conn = new mysqli('localhost', 'root', '', 'debate');
-
-            // if ($conn->connect_error) {
-            //     die("Connection failed: " . $conn->connect_error);
-            //     echo "There is an error";
-            // }
-        
-            // $stmt = $conn->prepare("INSERT INTO subscribers (full_name, email) VALUES (?, ?)");
-            // $stmt->bind_param("ss", $nameOfUser, $userEmail);
-        
-
-            if(filter_var($userEmail, FILTER_VALIDATE_EMAIL)){
-
-                $mail = new PHPMailer(true);
-
-                try {
-                    //Server settings
-                    $mail->isSMTP();                                            // Send using SMTP
-                    $mail->Host       = 'smtp.gmail.com';                     // Set the SMTP server to send through
-                    $mail->SMTPAuth   = true;                                 // Enable SMTP authentication
-                    $mail->Username   = 'shukuraniyvan@gmail.com';               // SMTP username
-                    $mail->Password   = 'lnxp saer ztnw anmj';                      // SMTP password
-                    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;      // Enable TLS encryption
-                    $mail->Port       = 587;                                  // TCP port to connect to
-
-                    //Recipients
-                    $mail->setFrom('shukuraniyvan@gmail.com', 'Shukurani');
-                    $mail->addAddress($userEmail, $nameOfUser);   // Add a recipient
-
-                    // Content
-                    $mail->isHTML(true);                                      // Set email format to HTML
-                    $mail->Subject = 'Here is the subject';
-                    $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-                    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-
-                    $mail->send();
-                    $message = "Message has been sent";
-                    } catch (Exception $e) {
-                        $message =  "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-                    }
-            }
-            else{
-                $message = "Invalid email";
-            }
-        }
-
-        ?>
-         
-         <?php if (!empty($message)): ?>
-        <div class="message <?php echo filter_var($userEmail, FILTER_VALIDATE_EMAIL) ? 'success' : 'error'; ?>">
-            <?php echo $message; ?>
-        </div>
+        <form id="subscription-form" action="subscribe.php" method="POST">
+        <?php if (!empty($message)): ?>
+            <div class="message">
+                <?php echo $message; ?>
+            </div>
         <?php endif; ?>
 
-        <input type="name" id="name" name="name" placeholder="Enter your name" required>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
         <input type="email" id="email" name="email" placeholder="Enter your email" required>
         <button type="submit" name="subscribe">Subscribe</button>
     </form>
+
 <p class="success-message" id="success-message">
     <?php if (isset($_GET['subscription']) && $_GET['subscription'] == 'success') {
         echo "Thank you for subscribing! You will receive updates soon.";
