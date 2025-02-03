@@ -33,6 +33,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Execute the statement
     if ($stmt->execute()) {
         
+        // Set the success flag to true
+        $subscription_successful = true;
+
         // Send confirmation email to the subscriber
         $mail = new PHPMailer(true);
         try {
@@ -41,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $mail->Host = 'smtp.gmail.com'; // Use Gmail SMTP server
             $mail->SMTPAuth = true;
             $mail->Username = 'jeanshukurani1@gmail.com'; // Your email
-            $mail->Password = 'intq qdly jpkv nwed'; // Your app password (for Gmail)
+            $mail->Password = 'mutu uqly shkm vvhr'; // Your app password (for Gmail)
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port = 587;
 
@@ -84,13 +87,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $mail->Subject = 'New Subscriber Notification';
             $mail->Body = "A new subscriber has joined:<br><br>Full Name: $name<br>Email: $email";
 
-            // Send the email to the admin
             $mail->send();
             
-            // Optionally, redirect or display a success message
-            echo "Thank you for subscribing! A confirmation email has been sent to you.";
-            // header("Location: index.php?success=Subscribed successfully");
-
+            // Redirect to index.php with success message
+            header("Location: index.php?subscription=success");
+            exit();
+            
         } catch (Exception $e) {
             echo "Error sending emails: " . $mail->ErrorInfo;
         }

@@ -24,6 +24,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $subject = $_POST['Title'];
     $message = $_POST['details'];
 
+    // Handle File Upload
+    $uploadedFilePath = ''; // Default if no file is uploaded
+    if (isset($_FILES['uploadedFile']) && $_FILES['uploadedFile']['error'] === UPLOAD_ERR_OK) {
+        $fileName = basename($_FILES['uploadedFile']['name']);
+        $fileTmp = $_FILES['uploadedFile']['tmp_name'];
+        $uploadDir = "uploads/";
+
+        // Create the uploads directory if it doesn't exist
+        if (!is_dir($uploadDir)) {
+            mkdir($uploadDir, 0777, true);
+        }
+
+        $uploadedFilePath = $uploadDir . $fileName;
+        move_uploaded_file($fileTmp, $uploadedFilePath);
+    }
+
     // Fetch all subscribed emails
     $sql = "SELECT email FROM subscribers";
     $result = $conn->query($sql);
@@ -37,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $mail->Host       = 'smtp.gmail.com'; // Your SMTP server
             $mail->SMTPAuth   = true;
             $mail->Username   = 'jeanshukurani1@gmail.com'; // Your email
-            $mail->Password   = 'intq qdly jpkv nwed'; // Your email password or App Password
+            $mail->Password   = 'mutu uqly shkm vvhr'; // Your email password or App Password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port       = 587;
 
@@ -51,8 +67,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Send to all subscribers
             while ($row = $result->fetch_assoc()) {
                 $mail->addAddress($row['email']); // Add recipient
+
+                // Attach file if uploaded
+                if (!empty($uploadedFilePath)) {
+                    $mail->addAttachment($uploadedFilePath);
+                }
+
                 $mail->send();
                 $mail->clearAddresses(); // Clear recipient list for next email
+                $mail->clearAttachments(); // Clear attachments for the next email
             }
 
             echo "Emails sent successfully!";

@@ -577,3 +577,9 @@ img {
     text-align: justify;
     width: 40rem /* Ensures text and image are balanced */
 }
+#para{
+    color:#0056b3;
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+
+}

@@ -233,85 +233,79 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-// Query to fetch the latest 3 entries
 $query = "SELECT * FROM information ORDER BY id DESC LIMIT 3";
 $result = mysqli_query($conn, $query);
 
 if (mysqli_num_rows($result) > 0):
     while ($row = mysqli_fetch_assoc($result)):
-        // Extract data from each row
         $imageSrc = $row['picture'];
         $title = $row['title'];
         $description = $row['detail'];
 
-        // Truncate the description for preview and separate the rest
         $truncatedDescription = substr($description, 0, 50); // Adjust length as needed
         $remainingDescription = substr($description, 50);
 ?>
-        <div class="full">
-            <img src="<?php echo htmlspecialchars($imageSrc); ?>" alt="source" id="mi">
-            <p id="title"><?php echo htmlspecialchars($title); ?></p>
-            <p class="small-detail">
-                <?php echo htmlspecialchars($truncatedDescription); ?>
-            </p>
-            <p id="full-detail-<?php echo $row['id']; ?>" class="full-detail" style="display: none;">
-                <?php echo htmlspecialchars($remainingDescription); ?>
-            </p>
-            <span onclick="toggleDetails('full-detail-<?php echo $row['id']; ?>', this)">...</span>
-            <hr id="line">
-        </div>
+       <div class="full">
+    <img src="<?php echo htmlspecialchars($imageSrc); ?>" alt="source" id="mi">
+    <p id="title"><?php echo htmlspecialchars($title); ?></p>
+    <p class="small-detail">
+        <?php echo htmlspecialchars($truncatedDescription); ?>
+    </p>
+    <p id="full-detail-<?php echo $row['id']; ?>" class="full-detail" style="display: none;">
+        <?php echo htmlspecialchars($remainingDescription); ?>
+    </p>
+    <span onclick="toggleDetails('full-detail-<?php echo $row['id']; ?>', this)">more</span>
+    <hr id="line">
+</div>
+
 <?php
     endwhile;
 else:
     echo "<p>No content available.</p>";
 endif;
 
-// Close connection
 mysqli_close($conn);
 ?>
 
 <script>
-    // Toggle visibility of full details
     function toggleDetails(id, element) {
         const fullDetail = document.getElementById(id);
         if (fullDetail.style.display === 'none' || fullDetail.style.display === '') {
             fullDetail.style.display = 'block';
-            element.textContent = ' Show Less';
+            element.textContent = ' Show Less';  // Change text to "Show Less" when details are shown
         } else {
             fullDetail.style.display = 'none';
-            element.textContent = '...';
+            element.textContent = 'more';  // Change text back to "more" when details are hidden
         }
     }
 </script>
+
 
 </div>
 <div class="footer">
     <p id="blog">Subscribe to Our blog</p>
     <div class="subscription-container">
-     <!---<form id="subscription-form">
-            <input type="name" id="name" name="name" placeholder="Enter your name   " required>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required>
-            <button type="submit">Subscribe</button>
-        </form>
-        <p class="success-message" id="success-message">Thank you for subscribing!</p>--->  
+        <!-- Subscription Form -->
         <form id="subscription-form" action="subscribe.php" method="POST">
-        <?php if (!empty($message)): ?>
-            <div class="message">
-                <?php echo $message; ?>
-            </div>
-        <?php endif; ?>
+            <?php if (isset($_GET['subscription']) && $_GET['subscription'] == 'success'): ?>
+                <!-- Display confirmation message above the input box -->
+                <div class="message">
+                    <p id="para">Thank you for subscribing! You will receive updates soon.</p>
+                </div>
+            <?php endif; ?>
 
-        <input type="text" id="name" name="name" placeholder="Enter your name" required>
-        <input type="email" id="email" name="email" placeholder="Enter your email" required>
-        <button type="submit" name="subscribe">Subscribe</button>
-    </form>
-
-<p class="success-message" id="success-message">
-    <?php if (isset($_GET['subscription']) && $_GET['subscription'] == 'success') {
-        echo "Thank you for subscribing! You will receive updates soon.";
-    } ?>
-</p>
+            <!-- Name Input -->
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            
+            <!-- Email Input -->
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            
+            <!-- Subscribe Button -->
+            <button type="submit" name="subscribe">Subscribe</button>
+        </form>
     </div>
+</div>
+
 
 <h1 id="a">ASYV Debate Blog</h1>
     <div class="um">
