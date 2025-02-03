@@ -371,6 +371,7 @@ span:hover {
 #a{
     margin-top: -14.5%;
     margin-left: 70%;
+    color: white;
 }
 #blog {
     font-size: 1.4rem;
@@ -551,7 +552,6 @@ img {
     margin-top: 3rem;
   
 }
-/* Container for About Us (using Flexbox) */
 .about-container {
     display: flex; /* Use flexbox for side-by-side layout */
     justify-content: space-between; /* Distribute content horizontally */
@@ -561,7 +561,6 @@ img {
     padding: 20px;
 }
 
-/* Image Styling (Smaller and on the Right) */
 #am {
     width: 40%; /* Reduce image size */
     height: auto; /* Maintain aspect ratio */

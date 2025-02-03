@@ -41,7 +41,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $conn->close();
 ?>
 
-<!-- HTML part remains unchanged, as shown in your provided code -->
 
 
 <?php
@@ -193,12 +192,9 @@ if (!$result) {
 }
 ?>
 
-<!-- Display the events on the page -->
 <div class="event">
-    <!-----<h2>Upcoming Events</h2>---->
     <div class="events">
         <?php
-        // Loop through the fetched events and display each one
         while ($row = mysqli_fetch_assoc($result)) {
             $eventDate = $row['event_date'];
             $eventName = $row['event_name'];
@@ -325,7 +321,7 @@ mysqli_close($conn);
             spanElement.textContent = "less"; // Change ellipsis to 'less'
         } else {
             fullDetail.style.display = "none"; // Hide full content
-            spanElement.textContent = "..."; // Change 'less' back to ellipsis
+            spanElement.textContent = "..."; 
         }
     }
 

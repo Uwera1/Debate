@@ -8,7 +8,6 @@
 </head>
 <body>
     <main>
-        <!-- Left Sidebar -->
         <div class="left">
             <div class="img">
                 <img id="id" src=".\Pictures\dream.jpg" alt="Admin">
@@ -23,7 +22,6 @@
             </div>
         </div>
 
-        <!-- Form Section -->
         <div class="form-container">
             <h2>Add Upcoming Events</h2>
             <form action="index.php" method="POST">
