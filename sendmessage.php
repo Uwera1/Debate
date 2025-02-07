@@ -10,7 +10,7 @@ require 'vendor/autoload.php';
 $servername = "localhost";
 $username = "root"; // Change if necessary
 $password = ""; // Change if necessary
-$dbname = "debate"; // Change to your database name
+$dbname = "if0_38263976_debate"; // Change to your database name
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $mail->Host       = 'smtp.gmail.com'; // Your SMTP server
             $mail->SMTPAuth   = true;
             $mail->Username   = 'jeanshukurani1@gmail.com'; // Your email
-            $mail->Password   = 'qzjy pepb kmys wirb'; // Your email password or App Password
+            $mail->Password   = 'igtj pkva kckf nwzg'; // Your email password or App Password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port       = 587;
 
