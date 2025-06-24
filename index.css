@@ -2,6 +2,10 @@
     margin: 0;
     padding: 0;
 }
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 70px;
+}
 
 body {
     background-color: rgb(245, 245, 235);
@@ -31,8 +35,7 @@ nav {
 nav h1 {
     font-size: 2rem;
     color: white;
-    margin-left: 3%;
-  /*  font-family: 'Times New Roman', Times, serif;*/
+    margin-left: 8%;
     position: absolute;
     left: 20px;
 }
@@ -42,7 +45,7 @@ nav ul {
     display: flex; 
     justify-content: center; 
     gap: 30px;
-    margin: 0;
+  margin-left: 30%;
     padding: 0;
     width: 100%; 
 }
@@ -55,7 +58,6 @@ nav ul li a {
     text-decoration: none;
     color: white;
     font-size: 1.2rem;
-    /*font-family: 'Times New Roman', Times, serif;*/
     transition: color 0.3s ease;
 }
 
@@ -64,7 +66,7 @@ nav ul li a:hover {
 }
 
 main {
-    padding-top: 100px;
+    padding-top: 50px;
 }
 .class {
     display: grid;
@@ -88,83 +90,123 @@ main {
     position: relative;
 }
 
-
-#ak {
-    margin-top: 60%;
-    margin-left: -40rem;
-    grid-area: center;
-    justify-self: center;
-}
-#am{
+#event{
     grid-area: left;
     margin-top: 6rem;
-    margin-left: 43rem;
+    text-align: center;
     font-size: 2rem;
-  /*  font-family: 'Times New Roman', Times, serif;*/
 }
-#us{
+
+#us {
+    position: relative;
+    margin-top: -18%;  
     margin-left: 40%;
     font-weight: bold;
-   
     font-size: 1.6rem;
-
-    margin-top: -20%;
+    height: fit-content;
+    padding-top: 80px; 
 }
+:target {
+    scroll-margin-top: 120px; /* Adjust based on navbar height */
+}
+
+
 #ua{
     margin-left: 10%;
-  /*  font-family: 'Times New Roman', Times, serif;*/
-margin-top: 3%;
-width: 80%;
-text-align: center;
-font-size: 1.3rem;
-
-}
-#vi{
-    font-weight: bold;
-     font-size: 1.6rem;
-    
-    margin-top: -30%;
-    
-}
-.mubye{
-    margin-top: 8%;
-}
-#sion{
-    font-weight: bold;
-    font-size: 1.6rem;
-    margin-top: 13%;
-    color: black;
-
-width: 50%;
-   margin-left: 50%;
- 
-}
-#vision{
-    margin-top: 2%;
-    margin-left: -14rem;
- 
-    width: 90%;
+    margin-top: 0%;
+    width: 40rem;
     text-align: center;
-    font-size: 1.3rem;
+    font-size: 1rem;
+
 }
+.mubye {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 20px;
+    margin-top: 55%;
+    width: 80%; 
+    margin-left: -90%;
+    margin-left: auto; 
+    margin-left: -90%;}
+#ak {
+    width: 60%; /* Reduce image size */
+    height: auto; /* Maintain aspect ratio */
+    font-size: 2rem;
+    margin-top: 5%;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 10px; /* Optional: Adds rounded corners */
+}
+
+#vi {
+    font-size: 1.6rem; 
+    font-weight: bold;
+    width:100%;
+    text-align: center;
+    margin-left: 5%;
+    color: black;
+    margin-top: 2%; /* Remove top margin to align the text with the image */
+}
+
+#vision {
+    
+        margin-left: 10%;
+        margin-top: 0%;
+        width: 40rem;
+        text-align: center;
+        font-size: 1rem;    
+  
+}
+
 .word {
     text-align: center;
     
 }
 #im{
-    width: 3rem;
-    height: 3rem;
+    width: 4rem;
+    height: 4rem;
 }
-
-
-.after{
-    display: flex;
-    flex-direction: row;
-    gap: 70%;
-}
-
 .mission{
     display: flex;
+    justify-content: space-between; /* Distribute content horizontally */
+   align-items: flex-start; /* Align items at the top */
+     gap: 30px; /* Space between the image and text */
+     padding: 20px;
+   margin-top: 5%;
+}
+
+#su{
+    margin-left: -70%;
+    height: 15rem;
+    margin-top:-22%;
+}
+#sion{
+    font-weight: bold;
+    font-size: 1.6rem;
+    color: black;
+    text-align: left;
+    width: 100%;
+    margin-top: 5%;
+    padding-top: 2%;
+    margin-left: 40%;
+ 
+}
+#se {
+    display: block;
+    width: 30%;
+    height: 10%;
+    margin-right: 2%;
+    margin-top: 8%;
+    margin-left:1% ;
+}
+#yva{
+    margin-left: -30%;
+    font-size: 1rem;
+    text-align: center;
+    padding-top: 4%;
+    margin-top: 6%;
+ 
 }
 .event {
     width: 80%;
@@ -178,7 +220,6 @@ width: 50%;
     font-family: Arial, sans-serif;
 }
 
-/* Flexbox to align events horizontally */
 .events {
     display: flex;
     justify-content: space-around; /* Space items evenly */
@@ -215,7 +256,10 @@ width: 50%;
     margin-bottom: 5px;
     font-size: 18px;
 }
-
+.name{
+    font-size: 16px;
+    color: #555;
+}
 .event-item .name {
     font-size: 16px;
     color: #555;
@@ -227,7 +271,8 @@ width: 50%;
 
 .foot {
     background-color: rgb(234, 233, 230);
-    padding: 40px 0;
+    /* padding: 40px 0; */
+    /* height: 30vh; */
     text-align: center;
 }
 
@@ -245,7 +290,6 @@ width: 50%;
 #title {
     font-size: 2rem;
     color: #333;
-   /* font-family: 'Times New Roman', Times, serif;*/
 }
 
 
@@ -271,9 +315,19 @@ span:hover {
 
 
 #mi {
-    width: 100%;
-    height: auto;
+      width: 100%; 
+      height: 200px;
+      object-fit: cover;
+      display: block; 
 }
+
+.follow .full .photo img {
+    width: 100%;
+    height: 200px; 
+    object-fit: cover; 
+    display: block; 
+}
+
 #ir{
     margin-top:5%;
     margin-left: 10%;
@@ -288,11 +342,12 @@ span:hover {
     color: #333;
 }
 .footer {
-    background-color: #333;
+    /* background-color: #333; */
     color: white;
     padding: 40px 20px;
     text-align: center;
-    height: 194px;
+    height: 30vh;
+    background-color: #333;
 }
 
 .um {
@@ -314,23 +369,19 @@ span:hover {
     margin-left: 70%;
 }
 #a{
-   /* font-family: 'Times New Roman', Times, serif;*/
     margin-top: -14.5%;
     margin-left: 70%;
+    color: white;
 }
 #blog {
     font-size: 1.4rem;
     margin-left: -80%;
     color: white;
-    /* font-family: 'Times New Roman', Times, serif; */
 }
 
 .subscription-container {
-    /* background: #333; */
     height: 10rem;
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
     text-align: center;
-    
     max-width: 100%;
     margin-top: 30px;
 }
@@ -349,7 +400,7 @@ span:hover {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-.subscription-container input[type="name"] {
+.subscription-container input[type="text"] {
     width: 25%;
     padding: 10px;
     margin-left: 3%;
@@ -367,6 +418,7 @@ span:hover {
     border-radius: 2rem;
     margin-left: 10%;
     cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .subscription-container button:hover {
@@ -380,47 +432,13 @@ span:hover {
     display: none;
 }
 
-#yva{
-    margin-top: 16%;
-    margin-left: -30%;
-    font-size: 1.3rem;
-    text-align: center;
- 
-}
 
-
-
-/* Styling for the .after section */
-.after {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns for side-by-side images */
-    gap: 20px; /* Spacing between images */
-    justify-items: center; /* Center images within each column */
-    margin-bottom: 20px; /* Space below the .after section */
-}
-
-/* Styling for the #se image */
-#se {
-    display: block;
-    margin-right: 4%;
-    margin-top: 13%;
-    margin-left:7% ;
-    max-width: 50%; /* Limit the width of the image */
-    height: auto; /* Maintain aspect ratio */
-}
-
-
-
-/* Styling for the .final section */
 .final {
     display: grid;
-    justify-items: center; /* Center the image horizontally */
-    margin-top: 20px; /* Add space above the final image */
+    justify-items: center; 
 }
-
-/* Styling for all images */
 img {
-    max-width: 100%; /* Ensure images are responsive */
+    max-width: 100%; 
     height: auto; /* Maintain aspect ratio */
     border-radius: 10px; /* Optional: rounded corners */
 }
@@ -433,10 +451,6 @@ img {
     margin-top: -20%;
 }
 
-#su{
-    margin-left: -70%;
-    margin-top:-14%;
-}
 
 @media (max-width: 600px) {
     nav ul {
@@ -466,47 +480,47 @@ img {
         font-size: 1.5rem;
     }
 
-    .footer {
-        padding: 20px;
-    }
+ 
 }
-/*.general {
-    background-image: url('/Pictures/king.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 600px;
-    width: 100%;
-    margin-top: -7.2%;
-}*/
-/* For background image cycling */
+@media (max-width: 1440px) {
+    .general {
+        gap: 20px;
+    }
+
+    main {
+        padding: 0px;
+    }
+
+    footer {
+        font-size: 1.5rem;
+        position: relative;
+        margin-left: 0;
+    }
+
+    .mubye {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+    .final {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+ 
+}
+
 .general {
-    background-image: url('/Pictures/king1.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 600px;
+    background-image: url('picone.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    height: 90vh; 
     width: 100%;
-    margin-top: -7.2%;
-    animation: backgroundChange 15s infinite; /* 15s for one cycle */
+    margin-top: 0%;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    position: relative; 
 }
-
-@keyframes backgroundChange {
-    0% {
-        background-image: url('/Pictures/king.png');
-    }
-    33% {
-        background-image: url('/Pictures/good.PNG');
-    }
-    66% {
-        background-image: url('/Pictures/power.PNG');
-    }
-    100% {
-        background-image: url('/Pictures/power2.PNG');
-    }
-}
-
-/* Word Container (To contain individual letters) */
 .word {
     position: relative;
     font-family: 'Times New Roman', Times, serif;
@@ -516,77 +530,55 @@ img {
     display: inline-block;
 }
 
-/* Animate the text in #em only */
-#em {
-    font-size: 5rem; /* Increase font size */
-    word-spacing: 3rem; /* Add more space between words */
-    margin-top: 5rem;
+
+#debate {
+    font-size: 5rem; 
     color: white;
     margin-left: 26%;
     width: 50%;
-    /* font-family: 'Times New Roman', Times, serif; */
     text-align: center;
     font-weight: bold;
-    animation: fadeInAndMove 15s infinite; /* Animate #em */
+    
 }
 
-/* Keyframes for animating the #em text letter by letter */
-@keyframes fadeInAndMove {
-    0% {
-        opacity: 0;
-        transform: translateX(100%);
-    }
-    25% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-    50% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-    100% {
-        opacity: 0;
-        transform: translateX(-100%);
-    }
-}
-
-/* Individual letter styles for #em */
-#em span {
-    display: inline-block;
-    opacity: 0;
-    word-spacing: 3rem; /* Ensure consistent word spacing */
-    animation: letterAnimation 15s infinite;
-    animation-timing-function: ease-in-out;
-}
-
-@keyframes letterAnimation {
-    0% {
-        opacity: 0;
-        transform: translateX(100%);
-    }
-    20% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-    80% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-    100% {
-        opacity: 0;
-        transform: translateX(-100%);
-    }
-}
-
-/* Keep #um constant */
+  
 #um {
     font-size: 1.8rem;
     margin-left: 20%;
-    width: 100%;
-    /* font-family: 'Times New Roman', Times, serif; */
+    width: 60%;
     text-align: center;
     font-weight: lighter;
     color: white;
-    margin-top: 8rem;
-    animation: none; /* Ensures no animation on #um */
+    margin-top: 3rem;
+  
+}
+.about-container {
+    display: flex; /* Use flexbox for side-by-side layout */
+    justify-content: space-between; /* Distribute content horizontally */
+    align-items: flex-start; /* Align items at the top */
+    gap: 30px; /* Space between the image and text */
+    margin-top: 50px; /* Adjust top spacing */
+    padding: 20px;
+}
+
+#am {
+    width: 40%; /* Reduce image size */
+    height: auto; /* Maintain aspect ratio */
+    font-size: 2rem;
+    margin-left: 30%;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 10px; /* Optional: Adds rounded corners */
+}
+
+/* Text Section Styling */
+.about-text {
+    font-size: 1.2rem;
+    text-align: justify;
+    width: 40rem /* Ensures text and image are balanced */
+}
+#para{
+    color:#0056b3;
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+
 }

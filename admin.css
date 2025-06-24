@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #202124;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.form-box {
+    background: #fff;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 560px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: #202124;
+    margin-bottom: 24px;
+    font-weight: 500;
+}
+
+.form-value input[type="email"],
+.form-value input[type="password"] {
+    width: 20rem;
+    padding: 14px;
+    margin: 10px 0;
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #202124;
+}
+
+.inputbox label {
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    background-color: #fff;
+    padding: 0 4px;
+    font-size: 0.9rem;
+    color: #5f6368;
+}
+
+.forget {
+    margin: 15px 0;
+    font-size: 0.875rem;
+    color: #1a73e8;
+    text-align: right;
+    width: 100%;
+}
+
+.forget a {
+    color: #1a73e8;
+}
+
+.register {
+    font-size: 0.875rem;
+    color: #5f6368;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.register p a {
+    color: #1a73e8;
+}
+
+button {
+    width: 50%;
+    padding: 12px;
+    background-color: #1a73e8;  /* Example button color */
+    color: white;
+    border: none;
+    margin-left: 70px;
+    margin-top: 2%;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.form-value input[type="email"]:focus,
+.form-value input[type="password"]:focus {
+    border: 1px solid #1a73e8;  /* Same color as the button */
+    outline: none;  /* Removes the default browser outline */
+    box-shadow: 0 0 5px rgba(26, 115, 232, 0.5);  /* Optional: adds a soft glow effect */
+}
+
+button:hover {
+    background-color: #1669c1;
+}
